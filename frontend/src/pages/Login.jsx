@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Compass, ArrowLeft, CheckCircle2, Sparkles } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Login({ onNavigate }) {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('');
   const [loggedInUser, setLoggedInUser] = useState(null);
 
@@ -23,24 +25,7 @@ export default function Login({ onNavigate }) {
   };
 
   return (
-    <div className="login-fullscreen-wrapper">
-      {/* Background Indian Travel Image */}
-      <div className="login-backdrop-image" />
-      
-      {/* Warm Dark Overlay */}
-      <div className="login-warm-overlay" />
-
-      {/* Top Bar with Return Link */}
-      <div className="login-top-bar">
-        <button
-          onClick={() => onNavigate?.('Home')}
-          className="login-back-button"
-        >
-          <ArrowLeft size={16} />
-          <span>Return to akrosINDIA</span>
-        </button>
-      </div>
-
+    <div className="login-fullscreen-wrapper glass-page-wrapper">
       {/* Centered Glassmorphism Card */}
       <div className="login-center-stage">
         <div className="login-glass-card animate-fade-in">
@@ -50,24 +35,23 @@ export default function Login({ onNavigate }) {
             <div className="login-compass-badge">
               <Compass size={24} style={{ color: '#faefe7' }} />
             </div>
-            <span className="login-brand-tagline">akrosINDIA Sanctuary</span>
+            <span className="login-brand-tagline">{t('login.brandTagline', 'akrosINDIA Sanctuary')}</span>
           </div>
 
           {/* Heading */}
-          <h1 className="login-title">Welcome to akrosINDIA</h1>
+          <h1 className="login-title">{t('login.title', 'Welcome to akrosINDIA')}</h1>
           <p className="login-subtitle">
-            Sign in to unlock personalized royal expeditions, sanctuary itineraries, and private concierge planning.
+            {t('login.subtitle', 'Enter your traveler sanctuary to access curated itineraries, bespoke routes, and saved royal stays.')}
           </p>
 
           {loggedInUser ? (
             <div className="login-success-state animate-fade-in">
               <CheckCircle2 size={36} style={{ color: '#cfa376' }} />
-              <h3 className="login-success-title">Welcome, Honored Traveler</h3>
-              <p className="login-success-text">Connecting to your personal sanctuary...</p>
+              <h3 className="login-success-title">{t('login.loggedInMsg', 'Welcome back! Redirecting to sanctuary...')}</h3>
             </div>
           ) : (
             <>
-              {/* 3 Social Login Buttons: Google, Meta, Instagram in Warm Luxury Language */}
+              {/* 3 Social Login Buttons: Google, Meta, Instagram */}
               <div className="social-auth-stack">
                 
                 {/* 1. Google */}
@@ -79,7 +63,7 @@ export default function Login({ onNavigate }) {
                   <svg className="social-svg-icon" viewBox="0 0 24 24" fill="#221815">
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 13.88c-.62.6-1.52 1-2.64 1-2.22 0-4-1.78-4-4s1.78-4 4-4c1.1 0 1.95.42 2.53.96l1.42-1.42C16.8 6.48 15.15 6 14 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c3.15 0 5.42-2.18 5.62-5.18H14v-2.2h7.62c.08.43.12.92.12 1.48 0 3.32-2.26 5.86-5.1 5.78z" />
                   </svg>
-                  <span>Continue with Google</span>
+                  <span>{t('login.google', 'Continue with Google')}</span>
                 </button>
 
                 {/* 2. Meta */}
@@ -91,7 +75,7 @@ export default function Login({ onNavigate }) {
                   <svg className="social-svg-icon" viewBox="0 0 24 24" fill="#221815">
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
                   </svg>
-                  <span>Continue with Meta</span>
+                  <span>{t('login.meta', 'Continue with Meta')}</span>
                 </button>
 
                 {/* 3. Instagram */}
@@ -110,7 +94,7 @@ export default function Login({ onNavigate }) {
               {/* Minimal Email Divider */}
               <div className="login-or-divider">
                 <div className="divider-hairline" />
-                <span className="divider-text">or member passkey</span>
+                <span className="divider-text">{t('login.or', 'OR CONTINUE WITH EMAIL')}</span>
                 <div className="divider-hairline" />
               </div>
 
@@ -120,12 +104,12 @@ export default function Login({ onNavigate }) {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your registered email..."
+                  placeholder={t('login.emailPlaceholder', 'Enter your registered email...')}
                   className="login-email-input"
                   required
                 />
                 <button type="submit" className="login-submit-btn">
-                  <span>Sign In</span>
+                  <span>{t('login.emailBtn', 'Sign In')}</span>
                 </button>
               </form>
             </>
@@ -134,7 +118,7 @@ export default function Login({ onNavigate }) {
           {/* Privacy / Ethos Note */}
           <div className="login-footer-ethos">
             <Sparkles size={12} style={{ color: '#cfa376' }} />
-            <span>Encrypted sanctuary profile • Royal bespoke travel</span>
+            <span>{t('login.guarantee', 'Zero passwords required • Encrypted sanctuary privacy')}</span>
           </div>
 
         </div>

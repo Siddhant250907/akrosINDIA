@@ -1,171 +1,148 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
 import {
   Wallet,
   Users,
   Calendar,
-  Plane,
-  Home,
-  Utensils,
   Sparkles,
-  Compass,
-  Car,
   ArrowRight,
-  Info,
+  ShieldCheck,
   Check,
+  Crown,
+  Compass,
+  Star,
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function BudgetCalculator({ onNavigate }) {
+  const { t, dict } = useLanguage();
   const [travellers, setTravellers] = useState(2);
   const [days, setDays] = useState(5);
+  const [experienceTier, setExperienceTier] = useState('luxury'); // 'comfort' | 'luxury' | 'royal'
 
-  // Selected tiers
-  const [transportTier, setTransportTier] = useState('flight');
-  const [stayTier, setStayTier] = useState('boutique');
-  const [foodTier, setFoodTier] = useState('gourmet');
-  const [activityTier, setActivityTier] = useState('guided');
-  const [localTier, setLocalTier] = useState('chauffeur');
-
-  // Pricing configuration
-  const transportOptions = {
-    flight: { label: 'Executive Flight', ratePerPerson: 12500, icon: Plane, desc: 'Direct scheduled flight' },
-    train: { label: '1st AC Royal Rail', ratePerPerson: 4200, icon: Compass, desc: 'Tejas / Rajdhani Express' },
-    chauffeur: { label: 'Outstation Luxury Cab', ratePerPerson: 6500, icon: Car, desc: 'Private door-to-door drive' },
-    coach: { label: 'Premium Volvo', ratePerPerson: 2200, icon: Compass, desc: 'Comfort intercity coach' },
+  // Refined Subtle Tiers with translations
+  const tiers = {
+    comfort: {
+      id: 'comfort',
+      title: dict?.budgetCalc?.tiers?.comfort?.title || 'Curated Comfort',
+      icon: Compass,
+      badge: dict?.budgetCalc?.tiers?.comfort?.badge || 'Heritage & Comfort',
+      dailyRatePerPerson: 4800,
+      description: dict?.budgetCalc?.tiers?.comfort?.desc || 'Charming boutique havelis & verified homestays, AC transit, and curated local culinary trails.',
+      highlights: [
+        dict?.budgetCalc?.tiers?.comfort?.h1 || 'Boutique havelis & resorts',
+        dict?.budgetCalc?.tiers?.comfort?.h2 || 'Private AC road transfers',
+        dict?.budgetCalc?.tiers?.comfort?.h3 || 'Local food & heritage walks',
+      ],
+    },
+    luxury: {
+      id: 'luxury',
+      title: dict?.budgetCalc?.tiers?.luxury?.title || 'Signature Luxury',
+      icon: Star,
+      badge: dict?.budgetCalc?.tiers?.luxury?.badge || 'Most Popular',
+      dailyRatePerPerson: 9800,
+      description: dict?.budgetCalc?.tiers?.luxury?.desc || 'Handpicked 4–5★ heritage palaces, scheduled flights, private chauffeur, and private monument guides.',
+      highlights: [
+        dict?.budgetCalc?.tiers?.luxury?.h1 || 'Heritage palaces & villas',
+        dict?.budgetCalc?.tiers?.luxury?.h2 || 'Flights + dedicated chauffeur',
+        dict?.budgetCalc?.tiers?.luxury?.h3 || 'Curated cultural immersions',
+      ],
+    },
+    royal: {
+      id: 'royal',
+      title: dict?.budgetCalc?.tiers?.royal?.title || 'Royal Bespoke',
+      icon: Crown,
+      badge: dict?.budgetCalc?.tiers?.royal?.badge || 'Ultra-Luxury',
+      dailyRatePerPerson: 19500,
+      description: dict?.budgetCalc?.tiers?.royal?.desc || 'Iconic royal sanctuaries (Taj / Oberoi), luxury private charters, round-the-clock bespoke concierge.',
+      highlights: [
+        dict?.budgetCalc?.tiers?.royal?.h1 || 'Grand palace suites',
+        dict?.budgetCalc?.tiers?.royal?.h2 || 'VIP access & private boats',
+        dict?.budgetCalc?.tiers?.royal?.h3 || 'Dedicated 24/7 concierge',
+      ],
+    },
   };
 
-  const stayOptions = {
-    palace: { label: 'Royal Palace Sanctuary', ratePerDay: 26000, desc: 'Taj / Oberoi heritage luxury' },
-    boutique: { label: 'Boutique Heritage Haveli', ratePerDay: 12000, desc: 'Curated royal courtyard haveli' },
-    resort: { label: 'Deluxe Nature Resort', ratePerDay: 6500, desc: 'Scenic garden & valley views' },
-    comfort: { label: 'Comfort Villa', ratePerDay: 3800, desc: 'Clean, verified homestays' },
-  };
+  const currentTier = tiers[experienceTier];
+  const estimatedTotal = currentTier.dailyRatePerPerson * travellers * days;
+  const perPersonCost = currentTier.dailyRatePerPerson * days;
 
-  const foodOptions = {
-    royal: { label: 'Royal Banquets & Fine Dining', ratePerPersonPerDay: 3200, desc: 'Multi-course regal thalis' },
-    gourmet: { label: 'Curated Regional Gourmet', ratePerPersonPerDay: 1800, desc: 'Chef-curated local bistros' },
-    local: { label: 'Authentic Local Specialties', ratePerPersonPerDay: 850, desc: 'Iconic street & heritage cafes' },
-  };
+  // Approximate subtle breakdown
+  const stayCost = Math.round(estimatedTotal * 0.52);
+  const transitCost = Math.round(estimatedTotal * 0.28);
+  const expCost = estimatedTotal - stayCost - transitCost;
 
-  const activityOptions = {
-    vip: { label: 'Private Charters & Safaris', ratePerPersonPerDay: 3000, desc: 'Exclusive boats, private guides' },
-    guided: { label: 'Curated Cultural Immersion', ratePerPersonPerDay: 1400, desc: 'Fort entry, sitar soirees' },
-    leisure: { label: 'Self-Paced Explorer', ratePerPersonPerDay: 600, desc: 'Audio tours, walking trails' },
-  };
-
-  const localTravelOptions = {
-    chauffeur: { label: 'Dedicated 24/7 Chauffeur', ratePerDay: 2400, desc: 'Private AC Sedan at your service' },
-    cabs: { label: 'On-Demand City Cabs', ratePerDay: 1200, desc: 'Point-to-point transfers' },
-    tuk: { label: 'Auto & Heritage Walk', ratePerDay: 500, desc: 'Local tuk-tuks & walking' },
-  };
-
-  // Calculations
-  const totalTransport = transportOptions[transportTier].ratePerPerson * travellers;
-  const totalStay = stayOptions[stayTier].ratePerDay * days;
-  const totalFood = foodOptions[foodTier].ratePerPersonPerDay * travellers * days;
-  const totalActivities = activityOptions[activityTier].ratePerPersonPerDay * travellers * days;
-  const totalLocalTravel = localTravelOptions[localTier].ratePerDay * days;
-
-  const estimatedTotal = totalTransport + totalStay + totalFood + totalActivities + totalLocalTravel;
-  const perPersonCost = Math.round(estimatedTotal / travellers);
+  const quickDays = [3, 5, 7, 10, 14];
+  const quickTravellers = [
+    { label: t('budgetCalc.partySolo', 'Solo'), count: 1 },
+    { label: t('budgetCalc.partyCouple', 'Couple'), count: 2 },
+    { label: t('budgetCalc.partyFamily', 'Family of 4'), count: 4 },
+  ];
 
   return (
-    <div className="inner-page-wrapper">
-      <Navbar activePage="Budget Calculator" onNavigate={onNavigate} />
-
+    <div className="inner-page-wrapper glass-page-wrapper">
       <div className="inner-page-stage">
-        <div className="budget-calculator-card animate-fade-in">
+        <div className="budget-subtle-container animate-fade-in">
           
           {/* Header */}
           <div className="form-editorial-header">
             <span className="editorial-badge">
-              <Wallet size={13} className="text-amber-400" />
-              <span>Transparent Cost Intelligence</span>
+              <Wallet size={13} />
+              <span>{t('budgetCalc.badge', 'Transparent Cost Intelligence')}</span>
             </span>
-            <h1 className="editorial-page-title">Expedition Budget Calculator</h1>
+            <h1 className="editorial-page-title">{t('budgetCalc.title', 'Trip Budget Calculator')}</h1>
             <p className="editorial-page-subtitle">
-              Configure your group dynamics and service standards to view an exact, uninflated cost formulation.
+              {t('budgetCalc.subtitle', 'A clean, unhurried estimate tailored to your travel party and preferred comfort tier.')}
             </p>
           </div>
 
-          {/* EQUATION FORMULATION DISPLAY (HERO BANNER OF THIS PAGE) */}
-          <div className="budget-equation-banner">
-            <div className="equation-title-row">
-              <span className="equation-label">The akrosINDIA Cost Equation</span>
-              <span className="equation-sub">Instant Real-Time Formulation</span>
-            </div>
-
-            <div className="equation-formula-row">
-              <div className="formula-term">
-                <span className="term-name">Transport</span>
-                <strong className="term-value">₹{totalTransport.toLocaleString('en-IN')}</strong>
-              </div>
-              <span className="formula-operator">+</span>
-
-              <div className="formula-term">
-                <span className="term-name">Stay</span>
-                <strong className="term-value">₹{totalStay.toLocaleString('en-IN')}</strong>
-              </div>
-              <span className="formula-operator">+</span>
-
-              <div className="formula-term">
-                <span className="term-name">Food</span>
-                <strong className="term-value">₹{totalFood.toLocaleString('en-IN')}</strong>
-              </div>
-              <span className="formula-operator">+</span>
-
-              <div className="formula-term">
-                <span className="term-name">Activities</span>
-                <strong className="term-value">₹{totalActivities.toLocaleString('en-IN')}</strong>
-              </div>
-              <span className="formula-operator">+</span>
-
-              <div className="formula-term">
-                <span className="term-name">Local Travel</span>
-                <strong className="term-value">₹{totalLocalTravel.toLocaleString('en-IN')}</strong>
-              </div>
-              <span className="formula-operator">=</span>
-
-              <div className="formula-term result-term">
-                <span className="term-name">Estimated Total</span>
-                <strong className="term-value result-highlight">
-                  ₹{estimatedTotal.toLocaleString('en-IN')}
-                </strong>
-              </div>
-            </div>
-
-            <div className="equation-footer-meta">
-              <span>{travellers} {travellers === 1 ? 'Traveller' : 'Travellers'} • {days} Days Expedition</span>
-              <span className="dot-sep">•</span>
-              <span><strong>₹{perPersonCost.toLocaleString('en-IN')}</strong> per person</span>
-            </div>
-          </div>
-
-          {/* Input Controls Grid */}
-          <div className="calculator-controls-grid">
+          {/* Core Interactive Card */}
+          <div className="budget-subtle-card">
             
-            {/* Top Bar: Travellers & Days Counters */}
-            <div className="counter-controls-bar">
-              {/* Travellers */}
-              <div className="counter-unit">
-                <div className="counter-icon-wrap">
-                  <Users size={18} />
+            {/* Quick Controls Row */}
+            <div className="budget-quick-inputs-grid">
+              
+              {/* Travellers Control */}
+              <div className="subtle-input-box">
+                <div className="subtle-input-header">
+                  <div className="subtle-icon-pill">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <h3 className="subtle-box-title">{t('budgetCalc.partyTitle', 'Travel Party')}</h3>
+                    <span className="subtle-box-desc">
+                      {travellers} {travellers === 1 ? t('budgetCalc.partyGuest', 'Guest') : t('budgetCalc.partyGuests', 'Guests')}
+                    </span>
+                  </div>
                 </div>
-                <div className="counter-content">
-                  <span className="counter-title">Number of Travellers</span>
-                  <div className="counter-stepper">
+
+                <div className="quick-pill-row">
+                  {quickTravellers.map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => setTravellers(item.count)}
+                      className={`subtle-pill-btn ${travellers === item.count ? 'active' : ''}`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  
+                  {/* Stepper for custom count */}
+                  <div className="subtle-stepper">
                     <button
                       type="button"
                       onClick={() => setTravellers(Math.max(1, travellers - 1))}
-                      className="step-btn"
+                      className="stepper-arrow-btn"
+                      aria-label="Decrease travellers"
                     >
                       -
                     </button>
-                    <span className="step-val">{travellers}</span>
+                    <span className="stepper-num">{travellers}</span>
                     <button
                       type="button"
                       onClick={() => setTravellers(travellers + 1)}
-                      className="step-btn"
+                      className="stepper-arrow-btn"
+                      aria-label="Increase travellers"
                     >
                       +
                     </button>
@@ -173,186 +150,151 @@ export default function BudgetCalculator({ onNavigate }) {
                 </div>
               </div>
 
-              {/* Days */}
-              <div className="counter-unit">
-                <div className="counter-icon-wrap">
-                  <Calendar size={18} />
+              {/* Days Control */}
+              <div className="subtle-input-box">
+                <div className="subtle-input-header">
+                  <div className="subtle-icon-pill">
+                    <Calendar size={16} />
+                  </div>
+                  <div>
+                    <h3 className="subtle-box-title">{t('budgetCalc.durationTitle', 'Trip Duration')}</h3>
+                    <span className="subtle-box-desc">{days} {t('budgetCalc.durationExpedition', 'Days Expedition')}</span>
+                  </div>
                 </div>
-                <div className="counter-content">
-                  <span className="counter-title">Expedition Days</span>
-                  <div className="counter-stepper">
+
+                <div className="quick-pill-row">
+                  {quickDays.map((d) => (
                     <button
+                      key={d}
                       type="button"
-                      onClick={() => setDays(Math.max(1, days - 1))}
-                      className="step-btn"
+                      onClick={() => setDays(d)}
+                      className={`subtle-pill-btn ${days === d ? 'active' : ''}`}
                     >
-                      -
+                      {d} {t('budgetCalc.days', 'Days')}
                     </button>
-                    <span className="step-val">{days} Days</span>
-                    <button
-                      type="button"
-                      onClick={() => setDays(days + 1)}
-                      className="step-btn"
+                  ))}
+                </div>
+              </div>
+
+            </div>
+
+            {/* Experience Tiers (3 refined subtle options) */}
+            <div className="subtle-tier-section">
+              <div className="subtle-tier-title-row">
+                <h3 className="subtle-tier-heading">{t('budgetCalc.selectTier', 'Select Experience Tier')}</h3>
+                <span className="subtle-tier-sub">{t('budgetCalc.tierStandards', 'Curated all-inclusive standards')}</span>
+              </div>
+
+              <div className="subtle-tier-grid">
+                {Object.values(tiers).map((tierItem) => {
+                  const isSelected = experienceTier === tierItem.id;
+                  const Icon = tierItem.icon;
+                  return (
+                    <div
+                      key={tierItem.id}
+                      onClick={() => setExperienceTier(tierItem.id)}
+                      className={`subtle-tier-card ${isSelected ? 'selected' : ''}`}
+                      role="button"
+                      tabIndex={0}
                     >
-                      +
-                    </button>
+                      <div className="tier-card-top">
+                        <div className="tier-card-icon-wrap">
+                          <Icon size={18} />
+                        </div>
+                        <span className={`tier-card-badge ${tierItem.id === 'luxury' ? 'featured' : ''}`}>
+                          {tierItem.badge}
+                        </span>
+                      </div>
+
+                      <h4 className="tier-card-name">{tierItem.title}</h4>
+                      <p className="tier-card-desc">{tierItem.description}</p>
+
+                      <div className="tier-card-price-line">
+                        <span className="tier-card-price">₹{tierItem.dailyRatePerPerson.toLocaleString('en-IN')}</span>
+                        <span className="tier-card-price-unit">{t('budgetCalc.perPersonDay', '/ person / day')}</span>
+                      </div>
+
+                      <ul className="tier-card-bullets">
+                        {tierItem.highlights.map((h, i) => (
+                          <li key={i}>
+                            <Check size={13} className="bullet-check" />
+                            <span>{h}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="tier-select-indicator">
+                        {isSelected ? (
+                          <span className="tier-selected-label">
+                            <Check size={14} /> Selected Tier
+                          </span>
+                        ) : (
+                          <span className="tier-select-action">Choose Tier</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Live Subtle Result Banner */}
+            <div className="subtle-estimation-banner">
+              <div className="estimation-content-side">
+                <span className="estimation-tag">
+                  <Sparkles size={13} />
+                  <span>{t('budgetCalc.totalEstimate', 'Real-Time Cost Estimate')}</span>
+                </span>
+                <div className="estimation-figures">
+                  <div className="primary-fig">
+                    <span className="fig-curr">₹</span>
+                    <span className="fig-val">{estimatedTotal.toLocaleString('en-IN')}</span>
+                  </div>
+                  <div className="secondary-fig">
+                    <span>₹{perPersonCost.toLocaleString('en-IN')}</span>
+                    <span className="fig-sub">{t('budgetCalc.perPersonTotal', 'Per person:')} ({days} {t('budgetCalc.days', 'days')})</span>
+                  </div>
+                </div>
+
+                {/* Subtle high-level breakdown */}
+                <div className="subtle-breakdown-row">
+                  <div className="breakdown-item">
+                    <span className="breakdown-dot dot-stay" />
+                    <span className="breakdown-name">{t('budgetCalc.breakdown.stays', 'Stays & Heritage Haveli')}:</span>
+                    <strong className="breakdown-amt">~₹{stayCost.toLocaleString('en-IN')}</strong>
+                  </div>
+                  <div className="breakdown-item">
+                    <span className="breakdown-dot dot-transit" />
+                    <span className="breakdown-name">{t('budgetCalc.breakdown.transit', 'Chauffeur Transit & Flights')}:</span>
+                    <strong className="breakdown-amt">~₹{transitCost.toLocaleString('en-IN')}</strong>
+                  </div>
+                  <div className="breakdown-item">
+                    <span className="breakdown-dot dot-exp" />
+                    <span className="breakdown-name">{t('budgetCalc.breakdown.experiences', 'Curated Meals & Guides')}:</span>
+                    <strong className="breakdown-amt">~₹{expCost.toLocaleString('en-IN')}</strong>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* 1. Transport Tier Selection */}
-            <div className="tier-selection-section">
-              <div className="tier-header-line">
-                <h4 className="tier-section-title">1. Transport Method (Origin to Destination)</h4>
-                <span className="tier-total-badge">Subtotal: ₹{totalTransport.toLocaleString('en-IN')}</span>
-              </div>
-              <div className="options-selection-grid">
-                {Object.entries(transportOptions).map(([key, opt]) => {
-                  const isSelected = transportTier === key;
-                  return (
-                    <div
-                      key={key}
-                      onClick={() => setTransportTier(key)}
-                      className={`tier-option-card ${isSelected ? 'active' : ''}`}
-                    >
-                      <div className="opt-top-row">
-                        <span className="opt-name">{opt.label}</span>
-                        <span className="opt-rate">₹{opt.ratePerPerson.toLocaleString('en-IN')}/person</span>
-                      </div>
-                      <span className="opt-desc">{opt.desc}</span>
-                      {isSelected && <div className="opt-check"><Check size={12} /></div>}
-                    </div>
-                  );
-                })}
+              <div className="estimation-action-side">
+                <button
+                  type="button"
+                  onClick={() => onNavigate?.('Plan Your Trip')}
+                  className="subtle-plan-cta"
+                  id="btn-budget-to-plan"
+                >
+                  <span>{t('budgetCalc.ctaPlan', 'Plan Trip With This Tier')}</span>
+                  <div className="cta-circle-arrow">
+                    <ArrowRight size={16} />
+                  </div>
+                </button>
+                <div className="estimation-guarantee">
+                  <ShieldCheck size={14} />
+                  <span>{t('budgetCalc.guarantee', 'Transparent luxury pricing. Actual rates may vary by festive seasonality.')}</span>
+                </div>
               </div>
             </div>
 
-            {/* 2. Stay Tier Selection */}
-            <div className="tier-selection-section">
-              <div className="tier-header-line">
-                <h4 className="tier-section-title">2. Stay Category (Nightly Accommodations)</h4>
-                <span className="tier-total-badge">Subtotal: ₹{totalStay.toLocaleString('en-IN')}</span>
-              </div>
-              <div className="options-selection-grid">
-                {Object.entries(stayOptions).map(([key, opt]) => {
-                  const isSelected = stayTier === key;
-                  return (
-                    <div
-                      key={key}
-                      onClick={() => setStayTier(key)}
-                      className={`tier-option-card ${isSelected ? 'active' : ''}`}
-                    >
-                      <div className="opt-top-row">
-                        <span className="opt-name">{opt.label}</span>
-                        <span className="opt-rate">₹{opt.ratePerDay.toLocaleString('en-IN')}/day</span>
-                      </div>
-                      <span className="opt-desc">{opt.desc}</span>
-                      {isSelected && <div className="opt-check"><Check size={12} /></div>}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* 3. Food Tier Selection */}
-            <div className="tier-selection-section">
-              <div className="tier-header-line">
-                <h4 className="tier-section-title">3. Dining & Gastronomy Standard</h4>
-                <span className="tier-total-badge">Subtotal: ₹{totalFood.toLocaleString('en-IN')}</span>
-              </div>
-              <div className="options-selection-grid grid-3-col">
-                {Object.entries(foodOptions).map(([key, opt]) => {
-                  const isSelected = foodTier === key;
-                  return (
-                    <div
-                      key={key}
-                      onClick={() => setFoodTier(key)}
-                      className={`tier-option-card ${isSelected ? 'active' : ''}`}
-                    >
-                      <div className="opt-top-row">
-                        <span className="opt-name">{opt.label}</span>
-                        <span className="opt-rate">₹{opt.ratePerPersonPerDay.toLocaleString('en-IN')}/p/d</span>
-                      </div>
-                      <span className="opt-desc">{opt.desc}</span>
-                      {isSelected && <div className="opt-check"><Check size={12} /></div>}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* 4. Activities Tier Selection */}
-            <div className="tier-selection-section">
-              <div className="tier-header-line">
-                <h4 className="tier-section-title">4. Curated Activities & Sightseeing</h4>
-                <span className="tier-total-badge">Subtotal: ₹{totalActivities.toLocaleString('en-IN')}</span>
-              </div>
-              <div className="options-selection-grid grid-3-col">
-                {Object.entries(activityOptions).map(([key, opt]) => {
-                  const isSelected = activityTier === key;
-                  return (
-                    <div
-                      key={key}
-                      onClick={() => setActivityTier(key)}
-                      className={`tier-option-card ${isSelected ? 'active' : ''}`}
-                    >
-                      <div className="opt-top-row">
-                        <span className="opt-name">{opt.label}</span>
-                        <span className="opt-rate">₹{opt.ratePerPersonPerDay.toLocaleString('en-IN')}/p/d</span>
-                      </div>
-                      <span className="opt-desc">{opt.desc}</span>
-                      {isSelected && <div className="opt-check"><Check size={12} /></div>}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* 5. Local Travel Tier Selection */}
-            <div className="tier-selection-section">
-              <div className="tier-header-line">
-                <h4 className="tier-section-title">5. Local Commute & Transfers within Destination</h4>
-                <span className="tier-total-badge">Subtotal: ₹{totalLocalTravel.toLocaleString('en-IN')}</span>
-              </div>
-              <div className="options-selection-grid grid-3-col">
-                {Object.entries(localTravelOptions).map(([key, opt]) => {
-                  const isSelected = localTier === key;
-                  return (
-                    <div
-                      key={key}
-                      onClick={() => setLocalTier(key)}
-                      className={`tier-option-card ${isSelected ? 'active' : ''}`}
-                    >
-                      <div className="opt-top-row">
-                        <span className="opt-name">{opt.label}</span>
-                        <span className="opt-rate">₹{opt.ratePerDay.toLocaleString('en-IN')}/day</span>
-                      </div>
-                      <span className="opt-desc">{opt.desc}</span>
-                      {isSelected && <div className="opt-check"><Check size={12} /></div>}
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-
-          {/* Action Footer */}
-          <div className="calculator-footer-action">
-            <button
-              onClick={() => onNavigate?.('Plan Your Trip')}
-              className="generate-trip-cta-btn"
-            >
-              <span>Apply Budget to Plan Your Trip</span>
-              <ArrowRight size={18} />
-            </button>
-            <button
-              onClick={() => onNavigate?.('Home')}
-              className="secondary-return-btn"
-            >
-              Return to Sanctuary Home
-            </button>
           </div>
 
         </div>

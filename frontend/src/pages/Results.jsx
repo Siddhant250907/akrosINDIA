@@ -10,14 +10,14 @@ import {
   Train,
   Bus,
   Car,
-  CheckCircle2,
   Calendar,
   Wallet,
   ArrowLeft,
-  Share2,
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Results({ tripData, onEdit, onNavigate }) {
+  const { t, dict } = useLanguage();
   const {
     startLocation = 'New Delhi',
     destination = 'Udaipur, Rajasthan',
@@ -47,19 +47,19 @@ export default function Results({ tripData, onEdit, onNavigate }) {
         <div className="results-top-bar">
           <button onClick={onEdit} className="back-link-btn">
             <ArrowLeft size={16} />
-            <span>Modify Preferences</span>
+            <span>{t('results.modify', 'Modify Preferences')}</span>
           </button>
           
           <div className="trip-status-pill">
             <Sparkles size={13} className="text-amber-300" />
-            <span>Curated Expedition Ready</span>
+            <span>{t('results.generatedBadge', 'Curated Expedition Ready')}</span>
           </div>
         </div>
 
         <div className="results-route-summary">
           <div className="route-endpoints">
             <div className="endpoint-node">
-              <span className="node-tag">Origin</span>
+              <span className="node-tag">{t('results.origin', 'Origin')}</span>
               <h2 className="node-city">{startLocation}</h2>
             </div>
 
@@ -72,7 +72,7 @@ export default function Results({ tripData, onEdit, onNavigate }) {
             </div>
 
             <div className="endpoint-node">
-              <span className="node-tag">Destination</span>
+              <span className="node-tag">{t('results.destination', 'Destination')}</span>
               <h2 className="node-city">{destination}</h2>
             </div>
           </div>
@@ -81,22 +81,22 @@ export default function Results({ tripData, onEdit, onNavigate }) {
           <div className="route-metrics-bar">
             <div className="metric-pill">
               <Navigation size={14} className="metric-icon" />
-              <span className="metric-label">Distance:</span>
+              <span className="metric-label">{t('results.approxDistance', 'Distance')}:</span>
               <strong className="metric-value">{distance}</strong>
             </div>
             <div className="metric-pill">
               <Clock size={14} className="metric-icon" />
-              <span className="metric-label">Travel Time:</span>
+              <span className="metric-label">{t('results.travelTime', 'Travel Time')}:</span>
               <strong className="metric-value">{travelTime}</strong>
             </div>
             <div className="metric-pill">
               <Calendar size={14} className="metric-icon" />
-              <span className="metric-label">Duration:</span>
+              <span className="metric-label">{t('planTrip.step4', 'Duration')}:</span>
               <strong className="metric-value">{duration}</strong>
             </div>
             <div className="metric-pill">
               <Wallet size={14} className="metric-icon" />
-              <span className="metric-label">Budget Target:</span>
+              <span className="metric-label">{t('results.estBudget', 'Budget')}:</span>
               <strong className="metric-value">{budget}</strong>
             </div>
           </div>

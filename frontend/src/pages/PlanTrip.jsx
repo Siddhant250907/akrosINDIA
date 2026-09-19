@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
 import Results from './Results';
 import {
   MapPin,
@@ -13,17 +12,18 @@ import {
   Sparkles,
   ArrowRight,
   Check,
-  CheckCircle,
-  HelpCircle,
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function PlanTrip({ onNavigate }) {
+  const { t, dict } = useLanguage();
+
   // Form State
   const [startType, setStartType] = useState('Current Location'); // 'Current Location' | 'Manual'
   const [manualStart, setManualStart] = useState('New Delhi');
   const [destination, setDestination] = useState('Udaipur, Rajasthan');
   const [budget, setBudget] = useState(65000);
-  const [duration, setDuration] = useState('5 Days');
+  const [duration, setDuration] = useState('5');
   const [travelMode, setTravelMode] = useState('Flight');
   const [interests, setInterests] = useState(['Heritage', 'Nature', 'Relaxation']);
   const [submitted, setSubmitted] = useState(false);
@@ -41,22 +41,13 @@ export default function PlanTrip({ onNavigate }) {
   ];
 
   const travelModes = [
-    { id: 'Flight', label: 'Flight', icon: Plane, desc: 'Fast & executive' },
-    { id: 'Train', label: 'Train', icon: Train, desc: 'Classic regal tracks' },
-    { id: 'Car', label: 'Car', icon: Car, desc: 'Private chauffeur' },
-    { id: 'Bus', label: 'Bus', icon: Bus, desc: 'Scenic express' },
+    { id: 'Flight', icon: Plane, label: dict?.planTrip?.modes?.Flight?.label || 'Flight', desc: dict?.planTrip?.modes?.Flight?.desc || 'Fast & executive' },
+    { id: 'Train', icon: Train, label: dict?.planTrip?.modes?.Train?.label || 'Train', desc: dict?.planTrip?.modes?.Train?.desc || 'Classic regal tracks' },
+    { id: 'Car', icon: Car, label: dict?.planTrip?.modes?.Car?.label || 'Car', desc: dict?.planTrip?.modes?.Car?.desc || 'Private chauffeur' },
+    { id: 'Bus', icon: Bus, label: dict?.planTrip?.modes?.Bus?.label || 'Bus', desc: dict?.planTrip?.modes?.Bus?.desc || 'Scenic express' },
   ];
 
-  const interestOptions = [
-    'Nature',
-    'Beaches',
-    'Mountains',
-    'Heritage',
-    'Temples',
-    'Food',
-    'Adventure',
-    'Relaxation',
-  ];
+  const interestKeys = ['Nature', 'Beaches', 'Mountains', 'Heritage', 'Temples', 'Food', 'Adventure', 'Relaxation'];
 
   const toggleInterest = (item) => {
     if (interests.includes(item)) {
@@ -78,15 +69,13 @@ export default function PlanTrip({ onNavigate }) {
     startLocation: startType === 'Current Location' ? 'New Delhi (Current Location)' : manualStart,
     destination,
     budget: `₹${budget.toLocaleString('en-IN')}`,
-    duration,
+    duration: `${duration} ${t('budgetCalc.days', 'Days')}`,
     travelMode,
     interests,
   };
 
   return (
-    <div className="inner-page-wrapper">
-      <Navbar activePage="Plan Your Trip" onNavigate={onNavigate} />
-
+    <div className="inner-page-wrapper glass-page-wrapper">
       <div className="inner-page-stage">
         {submitted ? (
           <Results
@@ -100,11 +89,11 @@ export default function PlanTrip({ onNavigate }) {
             <div className="form-editorial-header">
               <span className="editorial-badge">
                 <Sparkles size={13} className="text-amber-400" />
-                <span>Custom Expedition Planner</span>
+                <span>{t('planTrip.badge', 'Custom Expedition Planner')}</span>
               </span>
-              <h1 className="editorial-page-title">Plan Your Bespoke Indian Journey</h1>
+              <h1 className="editorial-page-title">{t('planTrip.title', 'Plan Your Bespoke Indian Journey')}</h1>
               <p className="editorial-page-subtitle">
-                Select your coordinates, travel rhythm, and passions to generate a tailored luxury expedition.
+                {t('planTrip.subtitle', 'Select your coordinates, travel rhythm, and passions to generate a tailored luxury expedition.')}
               </p>
             </div>
 
@@ -114,8 +103,8 @@ export default function PlanTrip({ onNavigate }) {
                 <div className="section-title-line">
                   <div className="section-step-num">1</div>
                   <div>
-                    <h3 className="section-heading">Starting Location</h3>
-                    <p className="section-subtext">Choose your departure origin</p>
+                    <h3 className="section-heading">{t('planTrip.step1', 'Starting Location')}</h3>
+                    <p className="section-subtext">{t('planTrip.step1Sub', 'Choose your departure origin')}</p>
                   </div>
                 </div>
 
@@ -127,7 +116,7 @@ export default function PlanTrip({ onNavigate }) {
                     className={`toggle-option-btn ${startType === 'Current Location' ? 'active' : ''}`}
                   >
                     <Navigation size={15} />
-                    <span>Current Location</span>
+                    <span>{t('planTrip.currentLoc', 'Current Location')}</span>
                   </button>
 
                   <button
@@ -136,7 +125,7 @@ export default function PlanTrip({ onNavigate }) {
                     className={`toggle-option-btn ${startType === 'Manual' ? 'active' : ''}`}
                   >
                     <MapPin size={15} />
-                    <span>Manual Entry</span>
+                    <span>{t('planTrip.manualEntry', 'Manual Entry')}</span>
                   </button>
                 </div>
 
@@ -144,7 +133,7 @@ export default function PlanTrip({ onNavigate }) {
                   <div className="detected-location-box">
                     <div className="gps-live-dot" />
                     <div>
-                      <span className="detected-label">Detected Position:</span>
+                      <span className="detected-label">{t('planTrip.detectedPos', 'Detected Position:')}</span>
                       <strong className="detected-city">New Delhi, NCR (Indira Gandhi Int'l)</strong>
                     </div>
                   </div>
@@ -154,7 +143,7 @@ export default function PlanTrip({ onNavigate }) {
                       type="text"
                       value={manualStart}
                       onChange={(e) => setManualStart(e.target.value)}
-                      placeholder="e.g. Mumbai, Bengaluru, Hyderabad..."
+                      placeholder={t('planTrip.enterCity', 'e.g. Mumbai, Bengaluru, Hyderabad...')}
                       className="clean-text-input"
                       required
                     />
@@ -180,8 +169,8 @@ export default function PlanTrip({ onNavigate }) {
                 <div className="section-title-line">
                   <div className="section-step-num">2</div>
                   <div>
-                    <h3 className="section-heading">Destination</h3>
-                    <p className="section-subtext">Where do you wish to journey?</p>
+                    <h3 className="section-heading">{t('planTrip.step2', 'Destination')}</h3>
+                    <p className="section-subtext">{t('planTrip.step2Sub', 'Where do you wish to journey?')}</p>
                   </div>
                 </div>
 
@@ -195,7 +184,7 @@ export default function PlanTrip({ onNavigate }) {
                     required
                   />
                   <div className="quick-suggestions-chips">
-                    <span className="chips-label">Featured:</span>
+                    <span className="chips-label">{t('planTrip.featured', 'FEATURED:')}</span>
                     {popularDests.map((dest) => (
                       <button
                         type="button"
@@ -217,8 +206,8 @@ export default function PlanTrip({ onNavigate }) {
                   <div className="section-title-line">
                     <div className="section-step-num">3</div>
                     <div>
-                      <h3 className="section-heading">Budget</h3>
-                      <p className="section-subtext">Allocated expedition budget</p>
+                      <h3 className="section-heading">{t('planTrip.step3', 'Budget')}</h3>
+                      <p className="section-subtext">{t('planTrip.step3Sub', 'Allocated expedition budget')}</p>
                     </div>
                   </div>
 
@@ -253,13 +242,13 @@ export default function PlanTrip({ onNavigate }) {
                   <div className="section-title-line">
                     <div className="section-step-num">4</div>
                     <div>
-                      <h3 className="section-heading">Trip Duration</h3>
-                      <p className="section-subtext">Number of days</p>
+                      <h3 className="section-heading">{t('planTrip.step4', 'Trip Duration')}</h3>
+                      <p className="section-subtext">{t('planTrip.step4Sub', 'Number of days')}</p>
                     </div>
                   </div>
 
                   <div className="duration-pill-group">
-                    {['3 Days', '5 Days', '7 Days', '10 Days', '14 Days'].map((d) => (
+                    {['3', '5', '7', '10', '14'].map((d) => (
                       <button
                         type="button"
                         key={d}
@@ -267,7 +256,7 @@ export default function PlanTrip({ onNavigate }) {
                         className={`duration-pill-btn ${duration === d ? 'active' : ''}`}
                       >
                         <Calendar size={14} />
-                        <span>{d}</span>
+                        <span>{d} {t('budgetCalc.days', 'Days')}</span>
                       </button>
                     ))}
                   </div>
@@ -279,8 +268,8 @@ export default function PlanTrip({ onNavigate }) {
                 <div className="section-title-line">
                   <div className="section-step-num">5</div>
                   <div>
-                    <h3 className="section-heading">Preferred Travel Mode</h3>
-                    <p className="section-subtext">Choose your desired transit mode</p>
+                    <h3 className="section-heading">{t('planTrip.step5', 'Mode of Transit')}</h3>
+                    <p className="section-subtext">{t('planTrip.step5Sub', 'Select preferred travel style')}</p>
                   </div>
                 </div>
 
@@ -313,23 +302,24 @@ export default function PlanTrip({ onNavigate }) {
                 <div className="section-title-line">
                   <div className="section-step-num">6</div>
                   <div>
-                    <h3 className="section-heading">Travel Interests</h3>
-                    <p className="section-subtext">Select all that inspire you</p>
+                    <h3 className="section-heading">{t('planTrip.step6', 'Travel Passions')}</h3>
+                    <p className="section-subtext">{t('planTrip.step6Sub', 'Choose your areas of interest')}</p>
                   </div>
                 </div>
 
                 <div className="interests-pill-cloud">
-                  {interestOptions.map((interest) => {
-                    const isSelected = interests.includes(interest);
+                  {interestKeys.map((key) => {
+                    const isSelected = interests.includes(key);
+                    const label = dict?.planTrip?.interests?.[key] || key;
                     return (
                       <button
                         type="button"
-                        key={interest}
-                        onClick={() => toggleInterest(interest)}
+                        key={key}
+                        onClick={() => toggleInterest(key)}
                         className={`interest-select-pill ${isSelected ? 'active' : ''}`}
                       >
                         {isSelected && <Check size={13} className="pill-check-icon" />}
-                        <span>{interest}</span>
+                        <span>{label}</span>
                       </button>
                     );
                   })}
@@ -344,11 +334,11 @@ export default function PlanTrip({ onNavigate }) {
                   id="btn-generate-trip"
                 >
                   <Sparkles size={18} />
-                  <span>Generate My Trip</span>
+                  <span>{t('planTrip.submitBtn', 'Generate Bespoke Itinerary')}</span>
                   <ArrowRight size={18} />
                 </button>
                 <p className="submit-sub-note">
-                  Generates both your Preferred Plan & akrosINDIA Recommended Sanctuary Route.
+                  {t('planTrip.submitSub', 'Crafting your personalized route & day-by-day sanctuary schedule')}
                 </p>
               </div>
             </form>

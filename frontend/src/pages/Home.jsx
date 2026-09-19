@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Hero from '../components/Hero';
 
-export default function Home({ onNavigate }) {
+export default function Home({ onNavigate, activeScene, currentIndex, setCurrentIndex }) {
   const [toastMessage, setToastMessage] = useState(null);
 
   const handlePlanTrip = (scene) => {
@@ -16,13 +16,19 @@ export default function Home({ onNavigate }) {
     <main className="home-minimal-page">
       {/* Subtle Toast Feedback */}
       {toastMessage && (
-        <div className="luxury-toast animate-fade-in">
+        <div className="luxury-toast glass-toast animate-fade-in">
           ✨ {toastMessage}
         </div>
       )}
 
-      {/* Cinematic Hero dominating the entire viewport */}
-      <Hero onNavigate={onNavigate} onPlanTrip={handlePlanTrip} />
+      {/* Cinematic Hero Stage */}
+      <Hero
+        onNavigate={onNavigate}
+        onPlanTrip={handlePlanTrip}
+        activeScene={activeScene}
+        currentIndex={currentIndex}
+        setCurrentIndex={setCurrentIndex}
+      />
     </main>
   );
 }
