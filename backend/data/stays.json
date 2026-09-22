@@ -1,0 +1,292 @@
+{
+  "goa": {
+    "classic": {
+      "name": "Fontainhas Heritage Art Boutique",
+      "tier": "Curated Classic",
+      "pricePerNight": 3400,
+      "rating": 4.6,
+      "amenities": ["Complimentary Portuguese Breakfast", "High-speed Wi-Fi", "Historic Latin Quarter Walking Tour", "Boutique Garden Terrace"],
+      "location": "Fontainhas, Panaji, North Goa",
+      "description": "Restored 19th-century Portuguese townhouse featuring azulejo tilework, teakwood verandahs, and artistic bohemian flair."
+    },
+    "heritage": {
+      "name": "Ahilya by the Sea",
+      "tier": "Royal Heritage",
+      "pricePerNight": 9500,
+      "rating": 4.8,
+      "amenities": ["Two Seawater Infinity Pools", "Ayurvedic Treehouse Massage", "Custom Fresh Catch Seafood Dinners", "Private Ocean Promenade"],
+      "location": "Dolphin Bay, Nerul, North Goa",
+      "description": "Serene coastal estate tucked amidst ancient banyan trees and crashing waves, crafted from hand-hewn red laterite stone."
+    },
+    "luxury": {
+      "name": "The Leela Palace Sanctuary & Villas",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 26000,
+      "rating": 4.9,
+      "amenities": ["Private Lagoon Plunge Pool", "24/7 Personal Butler Concierge", "12-Hole Championship Golf Course", "Private Beach Pavilion"],
+      "location": "Mobor Beach, Cavelossim, South Goa",
+      "description": "Opulent 75-acre sanctuary inspired by Vijayanagara palace grandeur and 18th-century Portuguese estates along secluded Mobor sands."
+    }
+  },
+  "jaipur": {
+    "classic": {
+      "name": "Khas Bagh Haveli & Polo Retreat",
+      "tier": "Curated Classic",
+      "pricePerNight": 3200,
+      "rating": 4.5,
+      "amenities": ["Courtyard Pool", "Rooftop Folk Music Sessions", "Artisan Chai & Pastries", "Complimentary Heritage Cycles"],
+      "location": "Amer Foothills, Jaipur",
+      "description": "Charming colonial-Rajput country haveli nestled peacefully near the ancient amber ramparts with open equestrian courtyards."
+    },
+    "heritage": {
+      "name": "Samode Haveli Heritage Residence",
+      "tier": "Royal Heritage",
+      "pricePerNight": 8800,
+      "rating": 4.8,
+      "amenities": ["Moorish Style Swimming Pool", "Hand-painted Fresco Dining Room", "Royal Ayurvedic Spa", "Verandah High Tea"],
+      "location": "Gangapole, Walled Old City, Jaipur",
+      "description": "Magnificent 225-year-old aristocratic mansion with hand-painted fresco murals, mosaic courtyards, and tranquil water fountains."
+    },
+    "luxury": {
+      "name": "Rambagh Palace (The Jewel of Jaipur)",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 32000,
+      "rating": 5.0,
+      "amenities": ["Royal Maharaja Suite", "Private Vintage Car Airport Escort", "Jiva Grande Spa Tent", "Peacock Garden Banquet"],
+      "location": "Bhawani Singh Road, Jaipur",
+      "description": "Former residence of the Maharaja of Jaipur, featuring 47 acres of landscaped Mughal gardens, marble cupolas, and majestic royal history."
+    }
+  },
+  "manali": {
+    "classic": {
+      "name": "The Himalayan Cedar Wood Chalet",
+      "tier": "Curated Classic",
+      "pricePerNight": 2900,
+      "rating": 4.5,
+      "amenities": ["Fireplace Lounge", "River Beas Valley Views", "Himachali Apple Orchard Strolls", "Hot Springs Excursion"],
+      "location": "Old Manali Village",
+      "description": "Cozy pine and deodar wood lodge offering panoramic river valley vistas, warm herbal infusions, and authentic bohemian café culture."
+    },
+    "heritage": {
+      "name": "Span Resort & Mineral Sanctuary",
+      "tier": "Royal Heritage",
+      "pricePerNight": 8200,
+      "rating": 4.7,
+      "amenities": ["Helipad Access", "Beas Riverside Riverbed Deck", "Heated Indoor Mineral Pool", "Trout Angling & Barbecue"],
+      "location": "Baragran, Kullu-Manali Valley",
+      "description": "Highland riverfront estate set on manicured lawns where rushing glacial waters meet snowcapped pine peaks."
+    },
+    "luxury": {
+      "name": "The Himalayan Castle & Luxury Cottages",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 22000,
+      "rating": 4.9,
+      "amenities": ["Private Turret Balcony", "Custom Guided Alpine Heli-Skiing", "Medieval Cast Stone Fireplaces", "Private Chef Dining"],
+      "location": "Hadimba Road, Manali",
+      "description": "Grand Gothic-revival castle perched high above the cedar forest, boasting antique four-poster beds, armaments, and unmatched mountain silence."
+    }
+  },
+  "kerala": {
+    "classic": {
+      "name": "Vembanad Water Lily Heritage Homestay",
+      "tier": "Curated Classic",
+      "pricePerNight": 3100,
+      "rating": 4.6,
+      "amenities": ["Country Canoe Rides", "Homestyle Fish Curry Dinners", "Organic Spice Garden Tour", "Lakeside Sunset Hammocks"],
+      "location": "Kumarakom Backwaters, Kottayam",
+      "description": "Traditional wooden tharavadu set along the sleepy canals where village life glides past gently on rustic country canoes."
+    },
+    "heritage": {
+      "name": "Coconut Lagoon CGH Earth Resort",
+      "tier": "Royal Heritage",
+      "pricePerNight": 9200,
+      "rating": 4.8,
+      "amenities": ["Boat-Only Arrival Sanctuary", "Heritage Wood Carved Mansions", "Sunset Flute Recitals", "Ayurvedic Wellness Center"],
+      "location": "Kavanattinkara, Kumarakom",
+      "description": "Accessible only by boat, an eco-luxury sanctuary crafted from restored 150-year-old wooden mansions on the shores of Lake Vembanad."
+    },
+    "luxury": {
+      "name": "Kumarakom Lake Resort & Heritage Villas",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 27500,
+      "rating": 4.9,
+      "amenities": ["Private Meandering Pool Access Villa", "Private Kettuvallam Sunset Cruise", "Ettukettu Heritage Dining Hall", "Ayurmana Royal Treatments"],
+      "location": "Kumarakom, Kottayam, Kerala",
+      "description": "Acclaimed luxury resort recognized worldwide for private pool villas, meandering lagoon waterways, and authentic Kerala architecture."
+    }
+  },
+  "coorg": {
+    "classic": {
+      "name": "Old Kent Coffee Estate & Heritage Lodge",
+      "tier": "Curated Classic",
+      "pricePerNight": 3500,
+      "rating": 4.6,
+      "amenities": ["Coffee Bean Roasting Tour", "Highland Verandah Fireplace", "Trekking Trails to Streams", "Kodava Cuisine Evenings"],
+      "location": "Madikeri, Kodagu",
+      "description": "Historic British colonial planter’s lodge situated in the heart of a 200-acre thriving Arabica coffee and pepper plantation."
+    },
+    "heritage": {
+      "name": "The Tamara Coorg (Valley Eco-Sanctuary)",
+      "tier": "Royal Heritage",
+      "pricePerNight": 11500,
+      "rating": 4.8,
+      "amenities": ["Elevated Stilt Cottages", "Private Waterfall Deck", "Custom Coffee Cupping Sessions", "Altitude Yoga Pavilion"],
+      "location": "Kabbinakad Estate, Yevakapadi, Coorg",
+      "description": "Secluded luxury retreat elevated on wooden stilts over dense rainforest canopies, coffee plantations, and natural babbling waterfalls."
+    },
+    "luxury": {
+      "name": "Evolve Back, Kuruba Safari & Plantation Resort",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 29000,
+      "rating": 5.0,
+      "amenities": ["Private Heated Lily Pool Villa", "Bespoke Wildlife Safari Chaperone", "Machan Treehouse Dining", "Vaidyasala Herbal Spa"],
+      "location": "Karadigodu Post, Siddapur, Coorg",
+      "description": "Sprawling 300-acre luxury sanctuary enveloped by coffee bushes and spice trees with individual private pool villas of royal Kodava design."
+    }
+  },
+  "udaipur": {
+    "classic": {
+      "name": "Amet Haveli on Lake Pichola",
+      "tier": "Curated Classic",
+      "pricePerNight": 3800,
+      "rating": 4.6,
+      "amenities": ["Ambrai Waterfront Terrace", "Lake Pichola Sunset Views", "Intricate Stone Jharokhas", "Traditional Puppet Shows"],
+      "location": "Hanuman Ghat, Lake Pichola, Udaipur",
+      "description": "Historic 350-year-old lakefront haveli directly facing the illuminated City Palace and Jag Mandir across glistening waters."
+    },
+    "heritage": {
+      "name": "Fateh Garh Heritage Sanctuary",
+      "tier": "Royal Heritage",
+      "pricePerNight": 9800,
+      "rating": 4.7,
+      "amenities": ["Panoramic Hilltop Infinity Pool", "Vintage Car Collection Museum", "Falconry & Rajput History Tour", "Rooftop Stargazing Lounge"],
+      "location": "Siswa, Udaipur Aravalli Heights",
+      "description": "Perched on an Aravalli crest overlooking Udaipur valley, rebuilt stone by stone following traditional vastu and ecological principles."
+    },
+    "luxury": {
+      "name": "Taj Lake Palace (Floating Royal Marble)",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 34000,
+      "rating": 5.0,
+      "amenities": ["Private Water Taxi Transfer", "Heritage Butler Service", "Jiva Spa Boat with Jacuzzi", "Royal Peacock Courtyard"],
+      "location": "Lake Pichola, Udaipur",
+      "description": "Iconic 18th-century white marble royal summer palace floating surreal in the middle of Lake Pichola, reserved exclusively for resident guests."
+    }
+  },
+  "madurai": {
+    "classic": {
+      "name": "Royal Court Heritage Hotel",
+      "tier": "Curated Classic",
+      "pricePerNight": 2600,
+      "rating": 4.4,
+      "amenities": ["Temple View Rooftop", "Authentic Chettinad Restaurant", "Morning Temple Concierge", "24-Hour Room Service"],
+      "location": "Opposite Railway Junction, Madurai",
+      "description": "Convenient and welcoming heritage-inspired hotel moments away from the vibrant markets and towering gopurams of Madurai."
+    },
+    "heritage": {
+      "name": "Heritage Madurai (Geoffrey Bawa Design)",
+      "tier": "Royal Heritage",
+      "pricePerNight": 7600,
+      "rating": 4.7,
+      "amenities": ["Temple-Tank Replica Swimming Pool", "Banyan Tree Courtyard", "Ayurvedic Treatment Center", "Classical Carnatic Recitals"],
+      "location": "Kochadai, Madurai",
+      "description": "Serene 17-acre sanctuary designed by famed architect Geoffrey Bawa featuring antique stone pillars, lotus ponds, and plunge pools."
+    },
+    "luxury": {
+      "name": "Gateway Hotel Pasumalai (Taj Sanctuary)",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 16500,
+      "rating": 4.8,
+      "amenities": ["Hilltop Panoramic Suites", "Peacock Garden Sanctuary", "Private Temple Priest Blessing", "Fine Dining South Indian Terrace"],
+      "location": "Pasumalai Hills, Madurai",
+      "description": "Colonial-era hilltop property surrounded by century-old trees and dancing wild peacocks, commanding sweeping views of the temple skyline."
+    }
+  },
+  "assam": {
+    "classic": {
+      "name": "Wild Grass Heritage Lodge Kaziranga",
+      "tier": "Curated Classic",
+      "pricePerNight": 3100,
+      "rating": 4.5,
+      "amenities": ["Jungle Naturalist Guide", "Assamese Tribal Thali", "Tea Garden Walks", "Campfire Folk Tales"],
+      "location": "Kaziranga Buffer Zone, Kohora",
+      "description": "Pioneering eco-lodge built in rural Assamese architectural style with terracotta tiles and indigenous bamboo craftsmanship."
+    },
+    "heritage": {
+      "name": "Diphlu River Lodge (Royal Safari Camp)",
+      "tier": "Royal Heritage",
+      "pricePerNight": 12500,
+      "rating": 4.8,
+      "amenities": ["Riverfront Stilt Cottages", "VIP Jeep Safari in Kaziranga", "Private Naturalist Lectures", "Brahmaputra Dolphin Excursion"],
+      "location": "Kaziranga National Park Border",
+      "description": "Intimate riverfront lodge where Prince William and Kate Middleton stayed, seamlessly blending wild river beauty with refined comfort."
+    },
+    "luxury": {
+      "name": "Mancotta Heritage Tea Bungalow & Estate",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 21000,
+      "rating": 4.9,
+      "amenities": ["Private Colonial Chang Bungalow", "Master Planter Tea Tasting", "Private River Catamaran Charter", "Bespoke Birding Concierge"],
+      "location": "Mancotta Tea Estate, Dibrugarh",
+      "description": "Exclusive 160-year-old British planter bungalow raised on stilts overlooking emerald tea bushes, equipped with antique bathtubs and silver service."
+    }
+  },
+  "ladakh": {
+    "classic": {
+      "name": "Stok Palace Heritage Homestay",
+      "tier": "Curated Classic",
+      "pricePerNight": 3800,
+      "rating": 4.6,
+      "amenities": ["Ladakhi Mud-Brick Architecture", "Traditional Wood Stove Heating", "Local Organic Apricot Jam Breakfast", "Monastery Chanting Tour"],
+      "location": "Stok Village, Leh Valley",
+      "description": "Authentic mud-brick villa nestled in peaceful Stok village offering unhindered vistas of the Stok Kangri mountain massif."
+    },
+    "heritage": {
+      "name": "Grand Dragon Ladakh",
+      "tier": "Royal Heritage",
+      "pricePerNight": 9800,
+      "rating": 4.8,
+      "amenities": ["Solar Heated Rooms & Oxygen Facility", "Tibetan Bakery & Tea Room", "Himalayan Glacier Balcony Views", "High-Pass Safari Fleet"],
+      "location": "Old Road Sheynam, Leh",
+      "description": "Premier eco-conscious heritage hotel in Leh decorated with handmade Tibetan woodwork, paintings, and panoramic Himalayan glacier views."
+    },
+    "luxury": {
+      "name": "The Ultimate Travelling Camp (TUTC) Chamba Camp",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 36000,
+      "rating": 5.0,
+      "amenities": ["Triple-layered Heated Luxury Tent", "Private Army of Butlers", "Private Polo Match & Monastery Access", "White Tablecloth Dining Under Milky Way"],
+      "location": "Thiksey, Leh-Ladakh",
+      "description": "Glamping at the pinnacle of luxury, nestled at the base of Thiksey Monastery beneath the glittering trans-Himalayan night sky."
+    }
+  },
+  "varanasi": {
+    "classic": {
+      "name": "Ganpati Heritage Guesthouse on the Ghats",
+      "tier": "Curated Classic",
+      "pricePerNight": 2500,
+      "rating": 4.5,
+      "amenities": ["Panoramic Ganga Rooftop Café", "Courtyard Painting Murals", "Sunrise Boat Assistance", "Walking Tour Concierge"],
+      "location": "Meer Ghat, Varanasi",
+      "description": "Vibrant and colorful heritage guesthouse directly overlooking the sacred river Ganges with shaded courtyard verandas and rooftop breezes."
+    },
+    "heritage": {
+      "name": "BrijRama Palace Heritage on Darbhanga Ghat",
+      "tier": "Royal Heritage",
+      "pricePerNight": 13500,
+      "rating": 4.9,
+      "amenities": ["Historic River Platform Elevator", "Classical Thumri & Kathak Evenings", "Private Bajra River Cruiser", "Vegetarian Fine Dining Darbhanga"],
+      "location": "Darbhanga Ghat, Varanasi",
+      "description": "210-year-old Maratha palace towering over Darbhanga Ghat, crafted from Chunar sandstone with gold-leaf vaulted ceilings."
+    },
+    "luxury": {
+      "name": "Taj Nadesar Palace Sanctuary",
+      "tier": "Imperial Sanctuary",
+      "pricePerNight": 28000,
+      "rating": 5.0,
+      "amenities": ["Horse-Drawn Carriage Arrival", "Private Maharaja Suite", "Jiva Royal Ayurvedic Treatments", "Exclusive Sanctuary Orchard Grounds"],
+      "location": "Nadesar Palace Grounds, Varanasi",
+      "description": "Historical residence of the Maharaja of Benares set within verdant mango orchards and jasmine fields, exuding serenity away from the ghat bustle."
+    }
+  }
+}

@@ -14,6 +14,7 @@ import {
   Check,
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { planTripAPI } from '../services/api';
 
 export default function PlanTrip({ onNavigate }) {
   const { t, dict } = useLanguage();
@@ -27,6 +28,9 @@ export default function PlanTrip({ onNavigate }) {
   const [travelMode, setTravelMode] = useState('Flight');
   const [interests, setInterests] = useState(['Heritage', 'Nature', 'Relaxation']);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(null);
+  const [apiResult, setApiResult] = useState(null);
 
   // Quick suggestions
   const popularStarts = ['New Delhi', 'Mumbai', 'Bengaluru', 'Kolkata', 'Chennai', 'Hyderabad'];
@@ -59,10 +63,31 @@ export default function PlanTrip({ onNavigate }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setLoading(true);
+    setApiError(null);
+
+    const origin = startType === 'Current Location' ? 'New Delhi' : manualStart;
+    try {
+      const response = await planTripAPI({
+        startLocation: origin,
+        destination,
+        budget,
+        duration: parseInt(duration, 10),
+        travelMode,
+        interests,
+      });
+
+      setApiResult(response);
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      console.error('Trip plan API error:', err);
+      setApiError(err.message || 'Failed to generate itinerary. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const tripData = {
@@ -80,6 +105,7 @@ export default function PlanTrip({ onNavigate }) {
         {submitted ? (
           <Results
             tripData={tripData}
+            apiResult={apiResult}
             onEdit={() => setSubmitted(false)}
             onNavigate={onNavigate}
           />
@@ -326,19 +352,39 @@ export default function PlanTrip({ onNavigate }) {
                 </div>
               </div>
 
+              {/* Error Message */}
+              {apiError && (
+                <div style={{
+                  background: 'rgba(239, 68, 68, 0.15)',
+                  border: '1px solid rgba(239, 68, 68, 0.35)',
+                  borderRadius: '12px',
+                  padding: '12px 18px',
+                  marginBottom: '16px',
+                  color: '#fca5a5',
+                  fontSize: '0.88rem',
+                  lineHeight: '1.4',
+                  textAlign: 'center'
+                }}>
+                  {apiError}
+                </div>
+              )}
+
               {/* Submit CTA */}
               <div className="form-submit-container">
                 <button
                   type="submit"
                   className="generate-trip-cta-btn"
                   id="btn-generate-trip"
+                  disabled={loading}
                 >
-                  <Sparkles size={18} />
-                  <span>{t('planTrip.submitBtn', 'Generate Bespoke Itinerary')}</span>
+                  <Sparkles size={18} className={loading ? 'animate-spin' : ''} />
+                  <span>{loading ? 'Synthesizing Bespoke Itinerary...' : t('planTrip.submitBtn', 'Generate Bespoke Itinerary')}</span>
                   <ArrowRight size={18} />
                 </button>
                 <p className="submit-sub-note">
-                  {t('planTrip.submitSub', 'Crafting your personalized route & day-by-day sanctuary schedule')}
+                  {loading
+                    ? 'Synthesizing real-time routes, stays, and day-wise schedule via akrosINDIA Core...'
+                    : t('planTrip.submitSub', 'Crafting your personalized route & day-by-day sanctuary schedule')}
                 </p>
               </div>
             </form>

@@ -1,0 +1,112 @@
+[
+  {
+    "id": "goa",
+    "name": "Goa",
+    "aliases": ["goa", "goa coast", "north goa", "south goa"],
+    "state": "Goa",
+    "region": "Konkan / Arabian Sea Coast",
+    "description": "Sun-drenched coastal haven renowned for golden sand crescent beaches, Portuguese colonial heritage, spice plantations, and vibrant nightlife.",
+    "defaultDuration": 4,
+    "popularInterests": ["Beaches", "Relaxation", "Heritage", "Food", "Adventure"],
+    "coordinates": { "lat": 15.2993, "lng": 74.124 }
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "aliases": ["jaipur", "pink city", "rajasthan heritage"],
+    "state": "Rajasthan",
+    "region": "Northern Heritage Corridor",
+    "description": "The historic Pink City, home to majestic Rajput forts, ornate amber palaces, bustling craft bazaars, and royal culinary legacies.",
+    "defaultDuration": 3,
+    "popularInterests": ["Heritage", "Temples", "Food", "Relaxation"],
+    "coordinates": { "lat": 26.9124, "lng": 75.7873 }
+  },
+  {
+    "id": "manali",
+    "name": "Manali",
+    "aliases": ["manali", "kullu manali", "himachal"],
+    "state": "Himachal Pradesh",
+    "region": "High Himalayas / Beas River Valley",
+    "description": "Enchanting mountain resort nestled in the Pir Panjal range with alpine cedar forests, gushing rivers, snow-covered mountain passes, and adventure trails.",
+    "defaultDuration": 5,
+    "popularInterests": ["Mountains", "Nature", "Adventure", "Relaxation"],
+    "coordinates": { "lat": 32.2396, "lng": 77.1887 }
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "aliases": ["kerala", "god's own country", "alleppey", "kochi", "munnar"],
+    "state": "Kerala",
+    "region": "Malabar & Backwater Valleys",
+    "description": "Tropical paradise of tranquil palm-fringed backwaters, emerald high-altitude tea plantations, serene Ayurvedic sanctuaries, and spice-laden coastlines.",
+    "defaultDuration": 5,
+    "popularInterests": ["Nature", "Relaxation", "Food", "Beaches"],
+    "coordinates": { "lat": 9.9312, "lng": 76.2673 }
+  },
+  {
+    "id": "coorg",
+    "name": "Bengaluru / Coorg",
+    "aliases": ["coorg", "coorg, karnataka", "bengaluru/coorg", "kodagu", "bengaluru"],
+    "state": "Karnataka",
+    "region": "Western Ghats Highland",
+    "description": "Known as the Scotland of India, an undulating expanse of misty coffee and cardamom plantations, thundering waterfalls, and ancient Kodava traditions.",
+    "defaultDuration": 4,
+    "popularInterests": ["Nature", "Mountains", "Relaxation", "Food"],
+    "coordinates": { "lat": 12.3375, "lng": 75.8069 }
+  },
+  {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "aliases": ["udaipur", "udaipur, rajasthan", "city of lakes"],
+    "state": "Rajasthan",
+    "region": "Mewar Royal Corridor",
+    "description": "Romantic City of Lakes centered around tranquil Lake Pichola, floating white marble palaces, regal courtyard havelis, and Aravalli mountain panoramas.",
+    "defaultDuration": 4,
+    "popularInterests": ["Heritage", "Relaxation", "Food", "Temples"],
+    "coordinates": { "lat": 24.5854, "lng": 73.7125 }
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "aliases": ["madurai", "madurai, tamil nadu", "temple city"],
+    "state": "Tamil Nadu",
+    "region": "Dravidian Heartland",
+    "description": "One of the world's oldest continuously inhabited cities, crowned by the breathtaking sculpted gopurams of Meenakshi Amman Temple and storied Tamil literature.",
+    "defaultDuration": 3,
+    "popularInterests": ["Temples", "Heritage", "Food"],
+    "coordinates": { "lat": 9.9252, "lng": 78.1198 }
+  },
+  {
+    "id": "assam",
+    "name": "Assam Tea Country",
+    "aliases": ["assam", "assam tea country", "kaziranga", "guwahati"],
+    "state": "Assam",
+    "region": "Brahmaputra Valley",
+    "description": "Lush northeastern realm of sprawling heritage colonial tea estates, the mighty Brahmaputra river, and Kaziranga National Park home to the one-horned rhinoceros.",
+    "defaultDuration": 5,
+    "popularInterests": ["Nature", "Adventure", "Relaxation"],
+    "coordinates": { "lat": 26.2006, "lng": 92.9376 }
+  },
+  {
+    "id": "ladakh",
+    "name": "Leh-Ladakh",
+    "aliases": ["leh-ladakh", "leh-ladakh, himalayas", "leh", "ladakh"],
+    "state": "Ladakh",
+    "region": "Trans-Himalayan Plateau",
+    "description": "Dramatic high-altitude desert featuring azure glacial lakes like Pangong Tso, centuries-old Buddhist gompas perched on cliffs, and world's highest motorable passes.",
+    "defaultDuration": 6,
+    "popularInterests": ["Mountains", "Adventure", "Nature", "Heritage"],
+    "coordinates": { "lat": 34.1526, "lng": 77.5771 }
+  },
+  {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "aliases": ["varanasi", "varanasi, uttar pradesh", "kashi", "banaras"],
+    "state": "Uttar Pradesh",
+    "region": "Ganges Sacred Plains",
+    "description": "Spiritual epicenter of India with mystical sunrise boat rides on the sacred Ganga, evocative evening Aarti ceremonies, labyrinthine alleys, and sacred silk weavers.",
+    "defaultDuration": 3,
+    "popularInterests": ["Temples", "Heritage", "Food", "Relaxation"],
+    "coordinates": { "lat": 25.3176, "lng": 82.9739 }
+  }
+]

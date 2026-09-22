@@ -1,0 +1,322 @@
+{
+  "goa": {
+    "Flight": {
+      "provider": "IndiGo / Air India Express",
+      "flightCode": "6E-241 / AI-883",
+      "travelTime": "2 hrs 35 mins",
+      "cost": 6500,
+      "tier": "Standard",
+      "summary": "Direct flight into Manohar International Airport (MOPA) / Dabolim"
+    },
+    "Train": {
+      "provider": "Konkan Kanya / Tejas Express",
+      "trainNumber": "12051 / 22119",
+      "travelTime": "11 hrs 45 mins",
+      "cost": 2200,
+      "tier": "Standard",
+      "summary": "Scenic 2nd AC / 3rd AC rail crossing breathtaking Konkan bridges and tunnels"
+    },
+    "Car": {
+      "provider": "Private Toyota Innova Crysta Chauffeur",
+      "travelTime": "12 hrs 30 mins",
+      "cost": 14000,
+      "tier": "Luxury",
+      "summary": "Dedicated air-conditioned highway chauffeur with fuel, tolls and state permits included"
+    },
+    "Bus": {
+      "provider": "Volvo B11R Multi-Axle AC Sleeper",
+      "travelTime": "14 hrs 00 mins",
+      "cost": 1600,
+      "tier": "Budget",
+      "summary": "Overnight luxury sleeper coach with reclining individual berths and USB charging"
+    }
+  },
+  "jaipur": {
+    "Flight": {
+      "provider": "Air India / IndiGo",
+      "flightCode": "AI-491 / 6E-6512",
+      "travelTime": "1 hr 05 mins",
+      "cost": 4200,
+      "tier": "Standard",
+      "summary": "Quick direct hopping flight landing at Jaipur International Airport (Sanganer)"
+    },
+    "Train": {
+      "provider": "Vande Bharat / Ajmer Shatabdi Express",
+      "trainNumber": "20978 / 12015",
+      "travelTime": "3 hrs 45 mins",
+      "cost": 1450,
+      "tier": "Standard",
+      "summary": "High-speed AC Executive Chair car with panoramic windows and onboard breakfast"
+    },
+    "Car": {
+      "provider": "Private Chauffeur Sedan / Innova",
+      "travelTime": "4 hrs 30 mins",
+      "cost": 6000,
+      "tier": "Comfort",
+      "summary": "Scenic cruise down the Delhi-Jaipur Expressway with personalized pitstops"
+    },
+    "Bus": {
+      "provider": "RSRTC Super Luxury Scania AC",
+      "travelTime": "5 hrs 30 mins",
+      "cost": 950,
+      "tier": "Budget",
+      "summary": "Smooth expressway express coach with comfortable pushback seats"
+    }
+  },
+  "manali": {
+    "Flight": {
+      "provider": "Alliance Air (via Bhuntar Airport / Kullu)",
+      "flightCode": "9I-805",
+      "travelTime": "1 hr 20 mins (+ 1 hr scenic cab)",
+      "cost": 8500,
+      "tier": "Premium",
+      "summary": "Spectacular aerial approach into Kullu-Manali Bhuntar Airport with mountain taxi transfer"
+    },
+    "Train": {
+      "provider": "Vande Bharat to Chandigarh + Mountain Car",
+      "trainNumber": "22447 / VB-Chandigarh",
+      "travelTime": "3 hrs train + 6 hrs alpine drive",
+      "cost": 3800,
+      "tier": "Standard",
+      "summary": "Rapid morning express to Chandigarh followed by private scenic transfer via Mandi tunnel highway"
+    },
+    "Car": {
+      "provider": "Private 4x4 Mountain Cruiser / Innova Crysta",
+      "travelTime": "11 hrs 30 mins",
+      "cost": 13500,
+      "tier": "Comfort",
+      "summary": "Private mountain transfer via new Kiratpur-Nerchowk four-lane expressway"
+    },
+    "Bus": {
+      "provider": "HPTDC Volvo Multi-Axle Gold Line",
+      "travelTime": "13 hrs 00 mins",
+      "cost": 1850,
+      "tier": "Budget",
+      "summary": "Legendary overnight Himachal Tourism Volvo luxury service climbing into the Beas Valley"
+    }
+  },
+  "kerala": {
+    "Flight": {
+      "provider": "Air India / IndiGo (Cochin Int'l Airport CIAL)",
+      "flightCode": "6E-512 / AI-510",
+      "travelTime": "3 hrs 10 mins",
+      "cost": 7200,
+      "tier": "Standard",
+      "summary": "Direct landing at Cochin Solar Airport followed by transfer to Vembanad / Munnar"
+    },
+    "Train": {
+      "provider": "Kerala Superfast Express / Rajdhani",
+      "trainNumber": "12626 / 12432",
+      "travelTime": "14 hrs 30 mins",
+      "cost": 2900,
+      "tier": "Standard",
+      "summary": "Air-conditioned express along the Western Ghats rail corridor with catered South Indian fare"
+    },
+    "Car": {
+      "provider": "Private Coastal Highway Chauffeur",
+      "travelTime": "16 hrs 00 mins",
+      "cost": 18000,
+      "tier": "Luxury",
+      "summary": "Long-distance luxury journey through scenic state highways, coconut orchards and coastal roads"
+    },
+    "Bus": {
+      "provider": "KSRTC SWIFT Gajaraj AC Sleeper",
+      "travelTime": "17 hrs 00 mins",
+      "cost": 2100,
+      "tier": "Budget",
+      "summary": "State-of-the-art premium sleeper bus with climate control and smooth air suspension"
+    }
+  },
+  "coorg": {
+    "Flight": {
+      "provider": "IndiGo to Bengaluru / Kannur + Scenic Transfer",
+      "flightCode": "6E-409",
+      "travelTime": "2 hrs 30 mins (+ 3 hrs scenic drive)",
+      "cost": 6200,
+      "tier": "Standard",
+      "summary": "Direct flight into Bengaluru Kempegowda or Kannur International Airport + scenic cab to Kodagu hills"
+    },
+    "Train": {
+      "provider": "Shatabdi Express to Mysuru + Estate Taxi",
+      "trainNumber": "12007",
+      "travelTime": "4 hrs train + 2 hrs hill drive",
+      "cost": 2100,
+      "tier": "Standard",
+      "summary": "Morning Shatabdi to historic Mysuru Junction followed by private hill taxi through sandalwood forests"
+    },
+    "Car": {
+      "provider": "Private Innova Highland Chauffeur",
+      "travelTime": "5 hrs 30 mins",
+      "cost": 7500,
+      "tier": "Comfort",
+      "summary": "Comfortable road cruise through the Bengaluru-Mysuru expressway ascending into misty coffee highlands"
+    },
+    "Bus": {
+      "provider": "KSRTC FlyBus / Airavat Club Class",
+      "travelTime": "6 hrs 30 mins",
+      "cost": 1100,
+      "tier": "Budget",
+      "summary": "Direct multi-axle luxury coach connection from airport/city terminal straight to Madikeri"
+    }
+  },
+  "udaipur": {
+    "Flight": {
+      "provider": "IndiGo / Vistara (Maharana Pratap Airport)",
+      "flightCode": "6E-2051 / UK-627",
+      "travelTime": "1 hr 25 mins",
+      "cost": 5400,
+      "tier": "Standard",
+      "summary": "Direct executive flight touching down at Dabok Airport with royal arrivals reception"
+    },
+    "Train": {
+      "provider": "Chetak Express / Mewar Superfast",
+      "trainNumber": "20473 / 12963",
+      "travelTime": "7 hrs 15 mins",
+      "cost": 1600,
+      "tier": "Standard",
+      "summary": "Classic overnight or morning 1st AC/2nd AC rail journey across the Aravalli foothills"
+    },
+    "Car": {
+      "provider": "Private Royal Chauffeur Sedan / Innova",
+      "travelTime": "8 hrs 00 mins",
+      "cost": 9500,
+      "tier": "Comfort",
+      "summary": "Private highway chauffeur via NH48 with optional stopover at Chittorgarh Fort"
+    },
+    "Bus": {
+      "provider": "Gujarat / Rajasthan Multi-Axle Volvo AC",
+      "travelTime": "9 hrs 30 mins",
+      "cost": 1250,
+      "tier": "Budget",
+      "summary": "Comfortable sleeper express with ambient lighting and overnight highway transit"
+    }
+  },
+  "madurai": {
+    "Flight": {
+      "provider": "Air India / IndiGo (Madurai Airport IXM)",
+      "flightCode": "AI-671 / 6E-7164",
+      "travelTime": "2 hrs 40 mins",
+      "cost": 6100,
+      "tier": "Standard",
+      "summary": "Convenient direct transit landing 20 minutes from the historic Meenakshi Gopuram precinct"
+    },
+    "Train": {
+      "provider": "Tejas Express / Pandian Superfast",
+      "trainNumber": "22671 / 12637",
+      "travelTime": "6 hrs 15 mins",
+      "cost": 1900,
+      "tier": "Standard",
+      "summary": "Premium executive chair car service with smart modern coaches and gourmet refreshments"
+    },
+    "Car": {
+      "provider": "Private South Indian Chauffeur",
+      "travelTime": "8 hrs 30 mins",
+      "cost": 8500,
+      "tier": "Comfort",
+      "summary": "Dedicated private sedan cruising past scenic paddy lands and historic temple towns"
+    },
+    "Bus": {
+      "provider": "SETC Ultra Deluxe AC Air Suspension",
+      "travelTime": "9 hrs 00 mins",
+      "cost": 1050,
+      "tier": "Budget",
+      "summary": "Reliable overnight long-distance express coach into the ancient temple heartland"
+    }
+  },
+  "assam": {
+    "Flight": {
+      "provider": "IndiGo / SpiceJet (Lokpriya Gopinath Bordoloi Int'l)",
+      "flightCode": "6E-6922",
+      "travelTime": "2 hrs 25 mins",
+      "cost": 6800,
+      "tier": "Standard",
+      "summary": "Direct flight to Guwahati followed by private scenic transfer to Brahmaputra tea estates"
+    },
+    "Train": {
+      "provider": "Rajdhani Express (Northeast Frontier)",
+      "trainNumber": "20504",
+      "travelTime": "16 hrs 00 mins",
+      "cost": 3100,
+      "tier": "Standard",
+      "summary": "Legendary Rajdhani journey crossing the mighty Brahmaputra river plains"
+    },
+    "Car": {
+      "provider": "Assam Tea Trail Private 4x4",
+      "travelTime": "18 hrs 00 mins",
+      "cost": 19000,
+      "tier": "Luxury",
+      "summary": "Expedition-grade private transport equipped for wildlife buffer zones and lush plantation trails"
+    },
+    "Bus": {
+      "provider": "ASTC Super Platinum AC Sleeper",
+      "travelTime": "20 hrs 00 mins",
+      "cost": 1950,
+      "tier": "Budget",
+      "summary": "Interstate sleeper linking major eastern hubs into the Assam valley"
+    }
+  },
+  "ladakh": {
+    "Flight": {
+      "provider": "Air India / IndiGo (Kushok Bakula Rimpochee Airport)",
+      "flightCode": "AI-445 / 6E-2054",
+      "travelTime": "1 hr 30 mins",
+      "cost": 9200,
+      "tier": "Premium",
+      "summary": "High-altitude mountain flight over snowcapped glaciers directly into Leh"
+    },
+    "Train": {
+      "provider": "Vande Bharat to Jammu + Mountain Expedition Car",
+      "trainNumber": "22439",
+      "travelTime": "8 hrs train + 14 hrs mountain convoy",
+      "cost": 5500,
+      "tier": "Adventure",
+      "summary": "High-speed rail to Jammu Tawi followed by scenic 2-day acclimatization mountain route"
+    },
+    "Car": {
+      "provider": "Private 4x4 Himalayan Safari Chauffeur",
+      "travelTime": "18 hrs split over 2 days",
+      "cost": 24000,
+      "tier": "Luxury Adventure",
+      "summary": "Bespoke high-clearance 4WD expedition vehicle with oxygen kit and veteran mountain driver"
+    },
+    "Bus": {
+      "provider": "HPTDC Himalayan Deluxe Coach",
+      "travelTime": "20 hrs 00 mins",
+      "cost": 2800,
+      "tier": "Budget Adventure",
+      "summary": "Guided cross-mountain transit crossing high passes with scheduled night halt at Keylong"
+    }
+  },
+  "varanasi": {
+    "Flight": {
+      "provider": "IndiGo / Air India (Lal Bahadur Shastri Int'l)",
+      "flightCode": "6E-2214 / AI-406",
+      "travelTime": "1 hr 20 mins",
+      "cost": 4900,
+      "tier": "Standard",
+      "summary": "Direct hopping flight landing 35 minutes from the Ganges ghats"
+    },
+    "Train": {
+      "provider": "Vande Bharat Express (New Delhi - Varanasi)",
+      "trainNumber": "22436",
+      "travelTime": "8 hrs 00 mins",
+      "cost": 1750,
+      "tier": "Standard",
+      "summary": "Flagship Vande Bharat high-speed executive express with spotless AC coaches and breakfast"
+    },
+    "Car": {
+      "provider": "Private Express Chauffeur Sedan",
+      "travelTime": "10 hrs 30 mins",
+      "cost": 9200,
+      "tier": "Comfort",
+      "summary": "Comfortable drive along the Purvanchal Expressway straight into Varanasi heritage precinct"
+    },
+    "Bus": {
+      "provider": "UPSRTC Janrath AC Sleeper",
+      "travelTime": "12 hrs 00 mins",
+      "cost": 1150,
+      "tier": "Budget",
+      "summary": "State-operated luxury sleeper linking northern hubs overnight with pushback amenities"
+    }
+  }
+}

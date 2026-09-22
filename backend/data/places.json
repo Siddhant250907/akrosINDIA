@@ -1,0 +1,142 @@
+{
+  "goa": {
+    "places": [
+      { "name": "Fontainhas Latin Quarter", "category": "Heritage", "duration": "2.5 hrs", "entryFee": 0, "description": "Colourful heritage precinct with vibrant ochre Portuguese villas, ornate balconies, and narrow cobbled streets." },
+      { "name": "Morjim & Ashwem Beaches", "category": "Beaches", "duration": "3.5 hrs", "entryFee": 0, "description": "Tranquil soft golden sand beaches fringed by casuarinas and renowned Olive Ridley turtle nesting reserves." },
+      { "name": "Cabo de Rama Fort & Cliff", "category": "Heritage", "duration": "2.0 hrs", "entryFee": 50, "description": "Ancient sea fort perched on high clifftops offering dramatic turquoise ocean panoramas and historic cannons." },
+      { "name": "Basilica of Bom Jesus", "category": "Heritage", "duration": "1.5 hrs", "entryFee": 0, "description": "UNESCO World Heritage Baroque church housing the mortal relics of St. Francis Xavier." },
+      { "name": "Sahakari Spice Plantation", "category": "Nature", "duration": "3.0 hrs", "entryFee": 500, "description": "Lush tropical farm demonstrating vanilla, cinnamon, and pepper cultivation with traditional Goan buffet." }
+    ],
+    "activities": [
+      { "id": "sunset_catamaran", "name": "Private Sunset Catamaran Charter", "category": "Relaxation", "cost": 4500, "description": "Private sail along the Mandovi estuary with chilled beverages and golden hour views." },
+      { "id": "heritage_food_walk", "name": "Old Goa Culinary Heritage Trail", "category": "Food", "cost": 1800, "description": "Guided tasting tour of traditional Bebinca, Chorizo pao, and Portuguese-Goan fusion delicacies." },
+      { "id": "scuba_grand_island", "name": "Grand Island Scuba & Coral Exploration", "category": "Adventure", "cost": 3500, "description": "PADI-assisted dive into shallow coral reefs with tropical fish and marine photography." }
+    ]
+  },
+  "jaipur": {
+    "places": [
+      { "name": "Amer Fort & Sheesh Mahal", "category": "Heritage", "duration": "3.5 hrs", "entryFee": 500, "description": "Majestic hilltop Rajput citadel featuring the glittering Hall of Mirrors and Maota Lake views." },
+      { "name": "Hawa Mahal (Palace of Winds)", "category": "Heritage", "duration": "1.5 hrs", "entryFee": 200, "description": "Iconic pink sandstone facade featuring 953 intricately latticed jharokha windows." },
+      { "name": "City Palace & Royal Museum", "category": "Heritage", "duration": "2.5 hrs", "entryFee": 700, "description": "Vast complex of regal courtyards, Peacock Gate, and personal weaponry collections of Jaipur rulers." },
+      { "name": "Jantar Mantar Royal Observatory", "category": "Heritage", "duration": "2.0 hrs", "entryFee": 200, "description": "UNESCO-listed collection of nineteen architectural astronomical instruments built by Sawai Jai Singh II." },
+      { "name": "Nahargarh Fort Sunset Point", "category": "Nature", "duration": "2.0 hrs", "entryFee": 100, "description": "Spectacular crest overlooking the sprawling Pink City bathed in twilight and ambient city lights." }
+    ],
+    "activities": [
+      { "id": "balloon_safari", "name": "Sunrise Hot Air Balloon Flight over Forts", "category": "Adventure", "cost": 8500, "description": "Drift peacefully over ancient ramparts and desert villages during sunrise with a champagne toast." },
+      { "id": "royal_thali", "name": "Maharaja Culinary Thali at 1135 AD", "category": "Food", "cost": 2800, "description": "Opulent silver service dining inside Amer Fort ramparts with live Santoor performances." },
+      { "id": "artisan_block_print", "name": "Bagru Block Printing & Blue Pottery Atelier", "category": "Heritage", "cost": 1500, "description": "Hands-on masterclass with fifth-generation natural dye artisans." }
+    ]
+  },
+  "manali": {
+    "places": [
+      { "name": "Hadimba Devi Cedar Temple", "category": "Temples", "duration": "1.5 hrs", "entryFee": 50, "description": "Ancient 16th-century four-tiered wooden pagoda temple set inside Dhungri Van Vihar pine sanctuary." },
+      { "name": "Solang Valley Snow Point", "category": "Adventure", "duration": "4.0 hrs", "entryFee": 100, "description": "Vibrant alpine valley famous for winter skiing, paragliding, and sweeping glacier views." },
+      { "name": "Atal Tunnel & Sissu Waterfall", "category": "Nature", "duration": "4.5 hrs", "entryFee": 150, "description": "Drive through the world's longest high-altitude highway tunnel emerging into the majestic Lahaul Valley." },
+      { "name": "Old Manali Bohemian Lane", "category": "Relaxation", "duration": "2.5 hrs", "entryFee": 0, "description": "Quiet riverside path lined with acoustic music cafes, bakeries, and rustic wooden homes." },
+      { "name": "Jogini Alpine Waterfalls", "category": "Nature", "duration": "3.0 hrs", "entryFee": 0, "description": "Picturesque nature trek through apple orchards and pine groves terminating at cascading mountain falls." }
+    ],
+    "activities": [
+      { "id": "tandem_paragliding", "name": "High-Altitude Tandem Paragliding", "category": "Adventure", "cost": 3200, "description": "15-minute soaring flight launching from Solang peaks with views of snow-dusted Dhauladhar ranges." },
+      { "id": "beas_river_rafting", "name": "White Water Rafting on River Beas", "category": "Adventure", "cost": 1600, "description": "Class II and III rapid adventure guided by certified mountain rescue river masters." },
+      { "id": "orchard_cider_tasting", "name": "Himachali Apple Cider & Trout Tasting", "category": "Food", "cost": 1400, "description": "Locally harvested trout and spiced cider lunch at an authentic riverside orchard pavilion." }
+    ]
+  },
+  "kerala": {
+    "places": [
+      { "name": "Alleppey & Vembanad Backwaters", "category": "Nature", "duration": "5.0 hrs", "entryFee": 0, "description": "Tranquil network of canals, lagoons, and lotus lakes framed by lush coconut trees and village hamlets." },
+      { "name": "Fort Kochi Heritage & Chinese Nets", "category": "Heritage", "duration": "3.0 hrs", "entryFee": 0, "description": "Colonial maritime quarter with antique spice warehouses, Jew Town, and cantilevered fishing nets." },
+      { "name": "Munnar Kolukkumalai Tea Terraces", "category": "Nature", "duration": "4.0 hrs", "entryFee": 150, "description": "The world's highest organic tea estate with morning panoramic views reaching into the clouds." },
+      { "name": "Marari Serene White Sand Beach", "category": "Beaches", "duration": "3.0 hrs", "entryFee": 0, "description": "Quiet, untouched fishing beach offering peaceful strolls, sea shell collecting, and quiet coconut groves." },
+      { "name": "Periyar Wildlife Sanctuary", "category": "Nature", "duration": "3.5 hrs", "entryFee": 450, "description": "Protected reserve famous for wild elephant herds, sambar deer, and tranquil lake boat safaris." }
+    ],
+    "activities": [
+      { "id": "private_kettuvallam", "name": "Private Kettuvallam Day Cruise & Lunch", "category": "Relaxation", "cost": 6000, "description": "Exclusive traditional thatched houseboat gliding through backwaters with freshly cooked Karimeen pollichathu." },
+      { "id": "ayurvedic_rejuvenation", "name": "Authentic Ayurvedic Abhyanga & Shirodhara", "category": "Relaxation", "cost": 3500, "description": "Traditional 90-minute therapeutic massage with medicinal warm herbal oils administered by Vaidyas." },
+      { "id": "kathakali_kalaripayattu", "name": "Kathakali Drama & Kalaripayattu Martial Arts", "category": "Heritage", "cost": 1200, "description": "Front-row seats to classical facial makeup demonstration, dance performance, and ancient combat styles." }
+    ]
+  },
+  "coorg": {
+    "places": [
+      { "name": "Raja's Seat Sunset Pavilion", "category": "Nature", "duration": "1.5 hrs", "entryFee": 50, "description": "Seasonal garden where Kodagu kings sat admiring dramatic sunsets over misty Western Ghat valleys." },
+      { "name": "Abbey Waterfalls & Hanging Bridge", "category": "Nature", "duration": "2.0 hrs", "entryFee": 100, "description": "Spectacular roaring waterfall hidden inside private coffee and spice plantations." },
+      { "name": "Namdroling Golden Temple (Bylakuppe)", "category": "Temples", "duration": "2.5 hrs", "entryFee": 0, "description": "One of India's largest Tibetan settlements with monumental 40-foot golden Buddha statues and prayer wheels." },
+      { "name": "Madikeri Fort & Palace Museum", "category": "Heritage", "duration": "2.0 hrs", "entryFee": 50, "description": "17th-century fort built by Mudduraja with life-size stone elephant statues and a colonial clock tower." },
+      { "name": "Tadiandamol Mountain Peak", "category": "Adventure", "duration": "5.0 hrs", "entryFee": 200, "description": "The highest peak in Coorg featuring shola grass slopes, alpine winds, and views of the Arabian Sea horizon." }
+    ],
+    "activities": [
+      { "id": "plantation_coffee_cupping", "name": "Specialty Coffee Cupping & Plantation Trail", "category": "Food", "cost": 1600, "description": "Sensory exploration of Arabica harvesting, drying, roasting, and brewing led by an estate agronomist." },
+      { "id": "kodava_pandi_curry", "name": "Kodava Heritage Dinner with Kachampuli", "category": "Food", "cost": 2200, "description": "Traditional slow-cooked Kodava banquet featuring wild honey, rice rotis (Akki Rotti), and authentic spices." },
+      { "id": "rainforest_night_walk", "name": "Guided Western Ghats Rainforest Night Walk", "category": "Adventure", "cost": 1800, "description": "Naturalist-led exploration to spot bioluminescent fungi, endemic tree frogs, and nocturnal wildlife." }
+    ]
+  },
+  "udaipur": {
+    "places": [
+      { "name": "City Palace Complex & Crystal Gallery", "category": "Heritage", "duration": "3.5 hrs", "entryFee": 450, "description": "Sprawling marble and granite royal residence overlooking Lake Pichola with mirror-work courtyards." },
+      { "name": "Jag Mandir Island Palace", "category": "Heritage", "duration": "2.5 hrs", "entryFee": 300, "description": "Island palace known as the Lake Garden Palace with monumental carved marble elephants at the dock." },
+      { "name": "Saheliyon-ki-Bari (Courtyard of the Maidens)", "category": "Nature", "duration": "1.5 hrs", "entryFee": 100, "description": "Lush garden built for royal ladies featuring marble fountains, elephant sculptures, and lotus pools." },
+      { "name": "Sajjangarh Monsoon Palace", "category": "Heritage", "duration": "2.5 hrs", "entryFee": 150, "description": "Hilltop palace built to watch monsoon clouds gather over the Aravalli hills and lakes." },
+      { "name": "Bagore Ki Haveli & Museum", "category": "Heritage", "duration": "2.0 hrs", "entryFee": 100, "description": "18th-century waterfront haveli on Gangaur Ghat displaying royal attire, puppets, and traditional arts." }
+    ],
+    "activities": [
+      { "id": "private_lake_charter", "name": "Private Lake Pichola Sunset Solar Boat Charter", "category": "Relaxation", "cost": 4200, "description": "Exclusive wooden boat gliding across peaceful waters at dusk as palaces light up with golden lamps." },
+      { "id": "dharohar_folk_dance", "name": "Dharohar Folk & Chari Dance at Gangaur Ghat", "category": "Heritage", "cost": 900, "description": "Mesmerizing evening performance of balancing brass pots, fire dancing, and Rajasthani puppet stories." },
+      { "id": "mewar_chef_table", "name": "Royal Mewari Chef's Table at Sunset Terrace", "category": "Food", "cost": 3200, "description": "Traditional Laal Maas and smoked Dal Baati Churma prepared under the guidance of royal palace recipes." }
+    ]
+  },
+  "madurai": {
+    "places": [
+      { "name": "Meenakshi Sundareswarar Temple", "category": "Temples", "duration": "3.5 hrs", "entryFee": 50, "description": "Historic Dravidian masterpiece with 14 towering gopurams encrusted with thousands of painted deities." },
+      { "name": "Thirumalai Nayakkar Palace", "category": "Heritage", "duration": "2.0 hrs", "entryFee": 100, "description": "17th-century palace showcasing grand Indo-Saracenic stone arches, giant pillars, and a dramatic courtyard." },
+      { "name": "Gandhi Memorial Museum & Heritage Library", "category": "Heritage", "duration": "1.5 hrs", "entryFee": 50, "description": "Historic Tamukkam Palace dedicated to India's freedom struggle with rare photographic archives." },
+      { "name": "Vandiyur Mariamman Teppakulam (Temple Tank)", "category": "Heritage", "duration": "1.5 hrs", "entryFee": 0, "description": "Enormous sacred reservoir with a central granite pavilion island connected through ancient channels." },
+      { "name": "Madurai Flower Market (Malli Bazaar)", "category": "Food", "duration": "2.0 hrs", "entryFee": 0, "description": "Sensory morning bazaar trading Madurai's famous GI-tagged intoxicating jasmine flowers." }
+    ],
+    "activities": [
+      { "id": "vip_temple_darshan", "name": "VIP Temple Protocol & Archana Escort", "category": "Temples", "cost": 1500, "description": "Priority queue access guided by a heritage temple scholar explaining ancient Dravidian iconography." },
+      { "id": "madurai_street_food", "name": "Madurai Night Food Crawl & Jigarthanda", "category": "Food", "cost": 1100, "description": "Guided tasting of Bun Parotta, Kari Dosa, and famous iced Famous Jigarthanda royal dessert." },
+      { "id": "chettinad_mansion_tour", "name": "Day Excursion to Chettinad Palaces & Tile Ateliers", "category": "Heritage", "cost": 3800, "description": "Private chauffeur excursion exploring Athangudi handmade terracotta tile making and palatial mansions." }
+    ]
+  },
+  "assam": {
+    "places": [
+      { "name": "Kaziranga National Park (Central Zone)", "category": "Nature", "duration": "4.0 hrs", "entryFee": 850, "description": "UNESCO World Heritage floodplains sheltering two-thirds of the world's great one-horned rhinoceroses." },
+      { "name": "Heritage Tea Estate & Factory (Jorhat)", "category": "Nature", "duration": "2.5 hrs", "entryFee": 200, "description": "Sprawling colonial gardens producing rich malty Assam black orthodox and CTC blends." },
+      { "name": "Majuli River Island & Vaishnavite Satras", "category": "Heritage", "duration": "5.0 hrs", "entryFee": 200, "description": "The world's largest inhabited river island famous for ancient masked theater and neo-Vaishnavite monasteries." },
+      { "name": "Kamakhya Shakti Temple", "category": "Temples", "duration": "2.5 hrs", "entryFee": 100, "description": "Venerated hilltop shrine perched on Nilachal Hill overlooking the Brahmaputra River." },
+      { "name": "Hoollongapar Gibbon Sanctuary", "category": "Nature", "duration": "3.0 hrs", "entryFee": 400, "description": "Evergreen forest reserve home to India's only ape species, the western hoolock gibbon." }
+    ],
+    "activities": [
+      { "id": "kaziranga_safari", "name": "Kaziranga Private Open 4x4 Jeep Safari", "category": "Adventure", "cost": 3600, "description": "Two-hour guided wildlife drive spotting wild water buffalo, rhinos, Asian elephants, and migratory birds." },
+      { "id": "brahmaputra_sunset_cruise", "name": "Brahmaputra Sunset River Catamaran Cruise", "category": "Relaxation", "cost": 2800, "description": "Evening voyage on the mighty river with traditional Bihu folk music and Assamese refreshments." },
+      { "id": "master_tea_tasting", "name": "Private Master Sommelier Tea Tasting Session", "category": "Food", "cost": 1500, "description": "Professional sensory tasting of Golden Tippy, White Needle, and First Flush single-estate teas." }
+    ]
+  },
+  "ladakh": {
+    "places": [
+      { "name": "Pangong Tso Glacial Lake", "category": "Nature", "duration": "6.0 hrs", "entryFee": 400, "description": "Endorheic lake at 14,270 feet that shifts in color from deep azure to turquoise green and cobalt." },
+      { "name": "Nubra Valley & Hunder Sand Dunes", "category": "Adventure", "duration": "6.0 hrs", "entryFee": 300, "description": "Cold desert valley surrounded by jagged peaks, where double-humped Bactrian camels roam white dunes." },
+      { "name": "Thiksey Monastery (Mini Potala)", "category": "Temples", "duration": "2.5 hrs", "entryFee": 50, "description": "Twelve-story Tibetan Buddhist complex housing a striking 49-foot statue of Maitreya Buddha." },
+      { "name": "Khardung La High Pass (17,982 ft)", "category": "Adventure", "duration": "2.0 hrs", "entryFee": 200, "description": "One of the highest motorable mountain passes in the world with fluttering Buddhist prayer flags." },
+      { "name": "Leh Royal Palace & Shanti Stupa", "category": "Heritage", "duration": "2.5 hrs", "entryFee": 100, "description": "Former 17th-century royal palace modeled after Lhasa's Potala and white-domed peace stupa." }
+    ],
+    "activities": [
+      { "id": "bactrian_camel_ride", "name": "Bactrian Camel Safari in Hunder Sand Dunes", "category": "Adventure", "cost": 1200, "description": "Ride historic Silk Route double-humped camels across white desert sands at dusk." },
+      { "id": "monastery_morning_chanting", "name": "Dawn Chanting & Butter Lamp Ceremony", "category": "Temples", "cost": 800, "description": "Participate in silent sunrise prayers with Buddhist monks resonant with deep chanting and horn fanfares." },
+      { "id": "ladakhi_thukpa_cooking", "name": "Traditional Ladakhi Wood-Fire Cooking Workshop", "category": "Food", "cost": 1600, "description": "Learn to fold Momos, knead Tingmo bread, and simmer herbal Thukpa noodle soup." }
+    ]
+  },
+  "varanasi": {
+    "places": [
+      { "name": "Dashashwamedh Ghat & Evening Ganga Aarti", "category": "Temples", "duration": "2.5 hrs", "entryFee": 0, "description": "The main ghat where brass-lamp holding priests perform hypnotic evening prayers synchronized to cymbals." },
+      { "name": "Kashi Vishwanath Temple Corridor", "category": "Temples", "duration": "2.5 hrs", "entryFee": 0, "description": "Sacred Golden Temple dedicated to Lord Shiva with an expansive newly renovated pedestrian corridor." },
+      { "name": "Sarnath Deer Park & Dhamek Stupa", "category": "Heritage", "duration": "3.0 hrs", "entryFee": 150, "description": "Sacred Buddhist site where Gautama Buddha delivered his first sermon after attaining enlightenment." },
+      { "name": "Assi Ghat Morning Subah-e-Banaras", "category": "Relaxation", "duration": "2.0 hrs", "entryFee": 0, "description": "Southernmost ghat known for peaceful sunrise yoga, Indian classical sitar ragas, and morning chai." },
+      { "name": "Manikarnika & Harishchandra Ghats", "category": "Heritage", "duration": "1.5 hrs", "entryFee": 0, "description": "Ancient burning ghats representing the eternal cycle of life, death, and spiritual liberation (Moksha)." }
+    ],
+    "activities": [
+      { "id": "sunrise_bajra_boat", "name": "Private Sunrise Bajra Boat Ride with Sitar Ragas", "category": "Relaxation", "cost": 3200, "description": "Hand-rowed wooden barge sailing slowly past eighty-four historic ghats while morning ragas drift on water." },
+      { "id": "banarasi_silk_weaving", "name": "Banarasi Silk Weaver Atelier & Loom Trail", "category": "Heritage", "cost": 1200, "description": "Private visit to centuries-old Muslim weaver mohallas weaving pure gold and silver zari brocade." },
+      { "id": "kashi_kachori_malaiyo", "name": "Kashi Heritage Breakfast Crawl & Malaiyo", "category": "Food", "cost": 900, "description": "Taste piping hot Club Kachoris, Ram Bhandar jalebis, and winter saffron-infused foam dessert (Malaiyo)." }
+    ]
+  }
+}
